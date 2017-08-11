@@ -1,0 +1,25 @@
+TODO:
+- MVP:
+  - Implement file download
+  - Implement necessary forms
+  - Implement correct file format
+  - More employee options
+- Improvements:
+  - Features:
+    - Save/load report (localStorage)
+    - Auto-save records
+    - State-specific options
+    - Load from file
+  - Frontend:
+    - Spruce up interface (bootstrap.css?)
+    - Info modals/popovers for fields
+    - Readme
+    - Disclaimer
+    - License?
+  - Code Health:
+    - Templating for records (jsRender?)
+    - Modularize js (CommonJS?)
+      - Webpack+minify?
+      - Browserify+uglify?
+    - Local libraries?
+    - GitHub?

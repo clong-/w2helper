@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: block;
+  width: 100%;
+}
+
+form {
+  display: block;
+}
+
+.form {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.controls {
+  margin: 10px;
+}
+
+.employee-header div {
+  display: inline-block;
+}
+
+.employee-header .controls {
+  float: right;
+}
+
+//to be removed later
+#printout {
+  margin: 30px;
+  font-family: courier;
+}
+
+#printout table {
+  border: 1px solid black;
+}
+
+#printout table td {
+  border: 1px solid black;
+  padding: 5px;
+}
