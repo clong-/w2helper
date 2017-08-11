@@ -1,17 +1,16 @@
 TODO:
 - MVP:
-  - Implement file download
+  - Implement file download (Blob+FileSaver)
   - Implement necessary forms
   - Implement correct file format
   - More employee options
 - Improvements:
   - Features:
-    - Save/load report (localStorage)
-    - Auto-save records
-    - State-specific options
+    - Save/load report (in localStorage)
+    - Auto-save records (timeout after field update)
+    - State-specific options (start with WI and expand?)
     - Load from file
   - Frontend:
-    - Spruce up interface (bootstrap.css?)
     - Info modals/popovers for fields
     - Readme
     - Disclaimer
@@ -20,5 +19,3 @@ TODO:
     - Modularize js (CommonJS?)
       - Webpack+minify?
       - Browserify+uglify?
-    - Local libraries?
-    - GitHub?
