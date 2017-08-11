@@ -17,7 +17,6 @@ TODO:
     - Disclaimer
     - License?
   - Code Health:
-    - Templating for records (jsRender?)
     - Modularize js (CommonJS?)
       - Webpack+minify?
       - Browserify+uglify?
