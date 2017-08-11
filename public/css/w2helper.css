@@ -1,26 +1,39 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
 main {
-  display: block;
-  width: 100%;
+  margin: 15px;
 }
 
 form {
-  display: block;
+  margin-top: 15px;
 }
 
-.form {
-  padding-left: 10px;
-  padding-bottom: 10px;
-  border: 1px solid black;
-  box-sizing: border-box;
+h2, h3 {
+  margin-top: 10px;
 }
 
-.controls {
-  margin: 10px;
+.form, #employees {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding-left: 15px;
+}
+
+#employees:empty {
+  display: none;
+}
+
+#employees {
+  padding: 15px;
+  padding-bottom: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#employees .form {
+  margin-bottom: 15px;
+}
+
+.company .form {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .employee-header div {
@@ -29,6 +42,10 @@ form {
 
 .employee-header .controls {
   float: right;
+}
+
+.controls {
+  margin: 15px;
 }
 
 //to be removed later

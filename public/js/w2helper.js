@@ -12,6 +12,7 @@ function initialize() {
   $('#print-report').on('click', printReport);
   $('#add-employee').on('click', addEmployee);
   $('#employees').on('click', '.remove-employee', removeEmployee);
+  $('.company').html($.render.company());
 }
 
 function printReport() {

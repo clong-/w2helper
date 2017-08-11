@@ -6,21 +6,27 @@ $.templates('employee',
 "      <h3>Employee Information</h3>" +
 "    </div>" +
 "    <div class='controls'>" +
-"      <button class='remove-employee'>X</button>" +
+"      <button class='remove-employee btn btn-default btn-sm'>&times;</button>" +
 "    </div>" +
 "  </div>" +
-"  <form class='employee' id='employee-{{:id}}'>" +
-"    <div class='field'>" +
-"      <label>Employee Name:</label>" +
-"      <input name='employee-name'></input>" +
+"  <form class='employee form-horizontal' id='employee-{{:id}}'>" +
+"    <div class='field form-group'>" +
+"      <label class='col-sm-1 control-label'>Name:</label>" +
+"      <div class='col-sm-3'>" +
+"        <input class='form-control' name='employee-name'></input>" +
+"      </div>" +
 "    </div>" +
-"    <div class='field'>" +
-"      <label>Employee ID:</label>" +
-"      <input name='employee-id'></input>" +
+"    <div class='field form-group'>" +
+"      <label class='col-sm-1 control-label'>ID:</label>" +
+"      <div class='col-sm-3'>" +
+"        <input class='form-control' name='employee-id'></input>" +
+"      </div>" +
 "    </div>" +
-"    <div class='field'>" +
-"      <label>Employee Wages:</label>" +
-"      <input name='employee-wages'></input>" +
+"    <div class='field form-group'>" +
+"      <label class='col-sm-1 control-label'>Wages:</label>" +
+"      <div class='col-sm-3'>" +
+"        <input class='form-control' name='employee-wages'></input>" +
+"      </div>" +
 "    </div>" +
 "  </form>" +
 "</div>"
