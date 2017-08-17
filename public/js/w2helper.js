@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(document).ready(function() {
   initialize();
 });
 
@@ -19,20 +19,20 @@ function printReport() {
   var lines = [];
   var businessObject = serializeFormToObject('business');
   var businessLineData = '';
-  var employeeObjects = $('form.employee').map((i,d) => {
+  var employeeObjects = $('form.employee').map(function(i,d) {
     return serializeFormToObject(d.id);
   });
 
   lines.push(HEADERS);
 
-  BUSINESSFIELDS.forEach((fieldName) => {
+  BUSINESSFIELDS.forEach(function(fieldName) {
     businessLineData += businessObject[fieldName] + ', ';
   });
 
-  employeeObjects.each((index, employee) => {
+  employeeObjects.each(function(index, employee) {
     var employeeLineData = '';
     console.log(employee);
-    EMPLOYEEFIELDS.forEach((fieldName) => {
+    EMPLOYEEFIELDS.forEach(function(fieldName) {
       employeeLineData += employee[fieldName] + ', ';
     });
     lines.push(businessLineData + employeeLineData.substring(0, employeeLineData.lastIndexOf(',')));
@@ -44,7 +44,7 @@ function printReport() {
 function serializeFormToObject(id) {
   var data = $('#'+id).serializeArray();
   var mapped = {};
-  data.forEach((d) => {
+  data.forEach(function(d) {
     mapped[d.name] = d.value;
   });
   return mapped;
@@ -56,9 +56,9 @@ function generateLine(business, employee) {
 
 function displayData(lines) {
   var html = "<table>"
-  lines.forEach((row) => {
+  lines.forEach(function(row) {
     html += "<tr>";
-    row.split(', ').forEach((cell) => {
+    row.split(', ').forEach(function(cell) {
       html += "<td>";
       html += cell;
       html += "</td>";
