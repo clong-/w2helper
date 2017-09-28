@@ -52,13 +52,9 @@ function Business(contextName, id) {
 
   var removeEmployee = function(event) {
     var employeeID = event.target.id.split('-');
-    console.log(employeeID);
     employeeID.splice(0,1);
-    console.log(employeeID);
     employeeID = employeeID.join('-');
-    console.log(employeeID);
     for(var i=0; i < employees.length; i++) {
-      console.log(employees[i].identifier);
       if(employees[i].identifier == employeeID) {
         employees[i].destroy();
         employees.splice(i,1);
