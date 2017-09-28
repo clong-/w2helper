@@ -37,9 +37,8 @@ function Report(contextName, id) {
       businesses: businesses
     }));
     businesses.forEach(function(b) { b.render() });
+    context.on('click', '#add-business-to-'+domID, addBusiness);
   }
-
-  $(contextName).on('click', '#add-business-to-'+domID, addBusiness);
 
   return {
     render: renderView,
