@@ -1,14 +1,7 @@
-$.templates('employee',
+var employeeTemplate = $.templates('employee',
 
-"<div class='form'>" +
-"  <div class='employee-header'>" +
-"    <div>" +
-"      <h3>Employee Information</h3>" +
-"    </div>" +
-"    <div class='controls'>" +
-"      <button class='remove-employee btn btn-default btn-sm'>&times;</button>" +
-"    </div>" +
-"  </div>" +
+"<div id='{{:domID}}' class='box'>" +
+"  <h1>Employee Name Here!</h1>" +
 "  <form class='employee form-horizontal' id='employee-{{:id}}'>" +
 "    <div class='field form-group'>" +
 "      <label class='col-sm-1 control-label'>Employee First Name:</label>" +
@@ -62,3 +55,5 @@ $.templates('employee',
 "</div>"
 
 );
+
+module.exports = employeeTemplate;

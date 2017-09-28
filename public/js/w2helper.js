@@ -11,8 +11,9 @@ EMPLOYEEFIELDS = ['employee-firstname', 'employee-lastname', 'employee-SSN', 'em
 var nextReportID = 0;
 
 function initialize() {
-  var reportContext = $("main");
-  var currentReport = Report(reportContext, nextReportID);
+  var reportContext = "main";
+  var currentReport = Report(reportContext, 'report-'+nextReportID);
+  $.views.settings.allowCode(true);
   currentReport.render();
   nextReportID += 1;
 }
