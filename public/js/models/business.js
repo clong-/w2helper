@@ -10,6 +10,17 @@ function Business(contextName, id) {
   var employees = [];
   var nextEmployeeID = 0;
 
+  var renderView = function() {
+    var context = $(contextName)
+    context.append(template.render({
+      domID: domID,
+      employees: employees
+    }));
+    employees.forEach(function(e) { e.render() });
+    context.on('click', '#add-employee-to-'+domID, addEmployee);
+    context.on('click', '.remove-employee', removeEmployee);
+  }
+
   var updateView = function() {
     var context = $(contextName);
     context.find('#'+domID).replaceWith(template.render({
@@ -17,6 +28,15 @@ function Business(contextName, id) {
       employees: employees
     }));
     employees.forEach(function(e) { e.render() });
+  }
+
+  var destroyView = function() {
+    var context = $(contextName);
+    employees.forEach(function(e, i) {
+      e.destroy();
+    });
+    employees = [];
+    context.find('#'+domID).remove();
   }
 
   var addEmployee = function() {
@@ -30,19 +50,29 @@ function Business(contextName, id) {
     updateView();
   }
 
-  var renderView = function() {
-    var context = $(contextName)
-    context.append(template.render({
-      domID: domID,
-      employees: employees
-    }));
-    employees.forEach(function(e) { e.render() });
-    context.on('click', '#add-employee-to-'+domID, addEmployee);
+  var removeEmployee = function(event) {
+    var employeeID = event.target.id.split('-');
+    console.log(employeeID);
+    employeeID.splice(0,1);
+    console.log(employeeID);
+    employeeID = employeeID.join('-');
+    console.log(employeeID);
+    for(var i=0; i < employees.length; i++) {
+      console.log(employees[i].identifier);
+      if(employees[i].identifier == employeeID) {
+        employees[i].destroy();
+        employees.splice(i,1);
+        break;
+      }
+    }
+    updateView();
   }
 
   return {
     render: renderView,
-    addEmployee: addEmployee
+    destroy: destroyView,
+    addEmployee: addEmployee,
+    identifier: domID
   }
 }
 

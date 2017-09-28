@@ -2,6 +2,9 @@ var employeeTemplate = $.templates('employee',
 
 "<div id='{{:domID}}' class='box'>" +
 "  <h1>Employee Name Here!</h1>" +
+"  <div class='employee-controls controls'>" +
+"    <button id='remove-{{:domID}}' class='btn btn-default remove-employee'>Remove Employee</button>" +
+"  </div>" +
 "  <form class='employee form-horizontal' id='employee-{{:id}}'>" +
 "    <div class='field form-group'>" +
 "      <label class='col-sm-1 control-label'>Employee First Name:</label>" +

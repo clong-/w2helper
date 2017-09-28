@@ -1,10 +1,8 @@
-
-
 function Employee(contextName, id) {
   //set rendering-related variables
   var contextName = contextName;
   var template = require('../templates/employee');
-  var domID = 'employee-'+id;
+  var domID = id;
 
   //set logic-related variables
   var forms = [];
@@ -12,15 +10,29 @@ function Employee(contextName, id) {
 
   var renderView = function() {
     var context = $(contextName);
-    context.find('#'+domID).remove();
     context.append(template.render({
       domID: domID,
       forms: forms
     }));
   }
 
+  var updateView = function() {
+    var context = $(contextName);
+    context.find('#'+domID).replaceWith(template.render({
+      domID: domID,
+      forms: forms
+    }));
+  }
+
+  var destroyView = function() {
+    var context = $(contextName);
+    context.find('#'+domID).remove();
+  }
+
   return {
-    render: renderView
+    render: renderView,
+    destroy: destroyView,
+    identifier: domID
   }
 }
 
