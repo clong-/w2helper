@@ -1,13 +1,9 @@
-$.templates('employee',
+var employeeTemplate = $.templates('employee',
 
-"<div class='form'>" +
-"  <div class='employee-header'>" +
-"    <div>" +
-"      <h3>Employee Information</h3>" +
-"    </div>" +
-"    <div class='controls'>" +
-"      <button class='remove-employee btn btn-default btn-sm'>&times;</button>" +
-"    </div>" +
+"<div id='{{:domID}}' class='box'>" +
+"  <h1>Employee Name Here!</h1>" +
+"  <div class='employee-controls controls'>" +
+"    <button id='remove-{{:domID}}' class='btn btn-default remove-employee'>Remove Employee</button>" +
 "  </div>" +
 "  <form class='employee form-horizontal' id='employee-{{:id}}'>" +
 "    <div class='field form-group'>" +
@@ -62,3 +58,5 @@ $.templates('employee',
 "</div>"
 
 );
+
+module.exports = employeeTemplate;

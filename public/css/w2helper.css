@@ -6,7 +6,7 @@ form {
   margin-top: 15px;
 }
 
-h2, h3 {
+h1, h2, h3 {
   margin-top: 10px;
 }
 
@@ -48,7 +48,17 @@ h2, h3 {
   margin: 15px;
 }
 
-//to be removed later
+.box {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 0px 10px 0px 10px;
+  margin-bottom: 10px;
+}
+
+.viewport {
+  padding-top: 10px;
+}
+
 #printout {
   margin: 30px;
   font-family: courier;

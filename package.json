@@ -1,0 +1,13 @@
+{
+  "name": "w2helper",
+  "version": "0.0.1",
+  "description": "A little app to help businesses in filing W2s electronically.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clong-/w2helper"
+  },
+  "scripts": {
+    "build": "browserify public/js/w2helper.js -o public/js/app.js",
+    "watch": "watchify public/js/w2helper.js -o public/js/app.js -v"
+  }
+}

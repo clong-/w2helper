@@ -1,21 +1,29 @@
 TODO:
 - MVP:
-  - Implement file download (Blob+FileSaver)
-  - Implement necessary forms
-  - Implement correct file format
-  - More employee options
+  - Forms
+    - With persistence across re-renders
+    - Align forms/fields with file specs
+  - File export (Blob+FileSaver?)
+    - Read ALL the specs!
+  - Single-page-sized interface
+  - Good styling
 - Improvements:
   - Features:
     - Save/load report (in localStorage)
     - Auto-save records (timeout after field update)
     - State-specific options (start with WI and expand?)
-    - Load from file
+    - Import from file
   - Frontend:
     - Info modals/popovers for fields
     - Readme
     - Disclaimer
     - License?
   - Code Health:
-    - Modularize js (CommonJS?)
-      - Webpack+minify?
-      - Browserify+uglify?
+    - Restructure project
+      - Move things out of public -- only deploy bundles/assets
+      - Put examples in a folder
+    - Dependency management
+      - Bundle CSS
+      - Install JS and CSS vendor libs with npm?
+      - And then also bundle them
+      - Gulp?
