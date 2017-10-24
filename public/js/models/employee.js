@@ -1,3 +1,5 @@
+var Form = require('./form');
+
 function Employee(contextName, id) {
   //set rendering-related variables
   var contextName = contextName;
@@ -5,8 +7,7 @@ function Employee(contextName, id) {
   var domID = id;
 
   //set logic-related variables
-  var forms = [];
-  var nextFormID = 0;
+  var forms = {};
 
   var renderView = function() {
     var context = $(contextName);
@@ -14,6 +15,7 @@ function Employee(contextName, id) {
       domID: domID,
       forms: forms
     }));
+    addForm('w2');
   }
 
   var updateView = function() {
@@ -22,11 +24,33 @@ function Employee(contextName, id) {
       domID: domID,
       forms: forms
     }));
+    Object.keys(forms).forEach(function(formName) {
+      forms[formName].render();
+    });
   }
 
   var destroyView = function() {
     var context = $(contextName);
+    //destroy forms!
     context.find('#'+domID).remove();
+  }
+
+  var addForm = function(formType) {
+    if(!forms[formType]) {
+      forms[formType] = Form(
+        [contextName, '#'+domID, '.employee-forms'].join(' '),
+        [domID, formType, 'form'].join('-'),
+        formType
+      );
+    }
+    updateView();
+  }
+
+  var removeForm = function(formType) {
+    /*
+    forms[formType] = undefined;
+    updateView();
+    */
   }
 
   return {

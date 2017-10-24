@@ -1,4 +1,5 @@
 var Employee = require('./employee');
+var Form = require('./form');
 
 function Business(contextName, id) {
   //set rendering-related variables
@@ -9,6 +10,7 @@ function Business(contextName, id) {
   //set logic-related variables
   var employees = [];
   var nextEmployeeID = 0;
+  var forms = {};
 
   var renderView = function() {
     var context = $(contextName)
@@ -27,6 +29,9 @@ function Business(contextName, id) {
       domID: domID,
       employees: employees
     }));
+    Object.keys(forms).forEach(function(formName) {
+      forms[formName].render();
+    });
     employees.forEach(function(e) { e.render() });
   }
 
@@ -36,6 +41,7 @@ function Business(contextName, id) {
       e.destroy();
     });
     employees = [];
+    //also detroy forms!
     context.find('#'+domID).remove();
   }
 
@@ -62,6 +68,23 @@ function Business(contextName, id) {
       }
     }
     updateView();
+  }
+
+  var addForm = function(formType) {
+    if(!forms[formType]) {
+      forms[formType] = Form(
+        [contextName, '#'+domID, '.business-forms'].join(' '),
+        [domID, formType, 'form'].join('-')
+      );
+    }
+    updateView();
+  }
+
+  var removeForm = function(formType) {
+    /*
+    forms[formType] = undefined;
+    updateView();
+    */
   }
 
   return {
