@@ -12,8 +12,6 @@ function Form(contextName, id, formType) {
 
   var renderView = function() {
     var context = $(contextName);
-    console.log(contextName);
-    console.log(template.render({domID: domID, formValues: formValues}));
     context.append(template.render({
       domID: domID,
       formValues: formValues
@@ -31,7 +29,6 @@ function Form(contextName, id, formType) {
 
   var loadFormValues = function() {
     var context = $('#'+domID);
-    console.log(context);
     Object.keys(formValues).forEach(function(fieldName) {
       context.find('input[name="'+fieldName+'"]').attr('value', formValues[fieldName]);
     });

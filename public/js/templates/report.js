@@ -5,10 +5,7 @@ var reportTemplate = $.templates('report',
 "  <div class='report-controls controls'>" +
 "    <button id='add-business-to-{{:domID}}' class='btn btn-default'>Add Business</button>" +
 "  </div>" +
-"  <div class='businesses-pane viewport box'>" +
-"    {{if !businesses.length}}" +
-"      <h2>No businesses added...</h2>" +
-"    {{/if}}" +
+"  <div class='businesses-pane viewport'>" +
 "  </div>" +
 "</div>"
 

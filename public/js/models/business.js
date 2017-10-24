@@ -1,5 +1,6 @@
 var Employee = require('./employee');
 var Form = require('./form');
+var Viewport = require('./viewport');
 
 function Business(contextName, id) {
   //set rendering-related variables
@@ -11,6 +12,11 @@ function Business(contextName, id) {
   var employees = [];
   var nextEmployeeID = 0;
   var forms = {};
+  var viewport = Viewport(
+    [contextName, '#'+domID, ".employees-pane"].join(" "),
+    [domID, 'viewport'].join("-"),
+    'employee'
+  )
 
   var renderView = function() {
     var context = $(contextName)
@@ -18,7 +24,7 @@ function Business(contextName, id) {
       domID: domID,
       employees: employees
     }));
-    employees.forEach(function(e) { e.render() });
+    viewport.render();
     context.on('click', '#add-employee-to-'+domID, addEmployee);
     context.on('click', '.remove-employee', removeEmployee);
   }
@@ -32,7 +38,7 @@ function Business(contextName, id) {
     Object.keys(forms).forEach(function(formName) {
       forms[formName].render();
     });
-    employees.forEach(function(e) { e.render() });
+    viewport.render();
   }
 
   var destroyView = function() {
@@ -41,7 +47,8 @@ function Business(contextName, id) {
       e.destroy();
     });
     employees = [];
-    //also detroy forms!
+    //also destroy forms!
+    //also destroy viewport!
     context.find('#'+domID).remove();
   }
 
@@ -53,6 +60,8 @@ function Business(contextName, id) {
       )
     );
     nextEmployeeID += 1;
+    viewport.setChildren(employees);
+    viewport.shiftView('last');
     updateView();
   }
 
@@ -67,6 +76,8 @@ function Business(contextName, id) {
         break;
       }
     }
+    viewport.setChildren(employees);
+    viewport.shiftView('prev');
     updateView();
   }
 

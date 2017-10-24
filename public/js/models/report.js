@@ -1,4 +1,5 @@
 var Business = require('./business');
+var Viewport = require('./viewport');
 
 function Report(contextName, id) {
   //set rendering-related variables
@@ -9,6 +10,11 @@ function Report(contextName, id) {
   //set logic-related variables
   var businesses = [];
   var nextBusinessID = 0;
+  var viewport = Viewport(
+    [contextName, '#'+domID, ".businesses-pane"].join(" "),
+    [domID, 'viewport'].join("-"),
+    'business'
+  )
 
   var renderView = function() {
     var context = $(contextName);
@@ -16,7 +22,7 @@ function Report(contextName, id) {
       domID: domID,
       businesses: businesses
     }));
-    businesses.forEach(function(b) { b.render() });
+    viewport.render();
     context.on('click', '#add-business-to-'+domID, addBusiness);
     context.on('click', '.remove-business', removeBusiness);
   }
@@ -27,7 +33,7 @@ function Report(contextName, id) {
       domID: domID,
       businesses: businesses
     }));
-    businesses.forEach(function(b) { b.render() });
+    viewport.render();
   }
 
   var addBusiness = function() {
@@ -38,6 +44,8 @@ function Report(contextName, id) {
       )
     );
     nextBusinessID += 1;
+    viewport.setChildren(businesses);
+    viewport.shiftView('last');
     updateView();
   }
 
@@ -52,6 +60,8 @@ function Report(contextName, id) {
         break;
       }
     }
+    viewport.setChildren(businesses);
+    viewport.shiftView('prev');
     updateView();
   }
 

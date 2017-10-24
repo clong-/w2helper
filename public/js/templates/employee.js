@@ -1,6 +1,6 @@
 var employeeTemplate = $.templates('employee',
 
-"<div id='{{:domID}}' class='box'>" +
+"<div id='{{:domID}}' class='employee box'>" +
 "  <h1>Employee Name Here!</h1>" +
 "  <div class='employee-forms'>" +
 "  </div>" +

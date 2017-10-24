@@ -31,7 +31,8 @@ function Employee(contextName, id) {
 
   var destroyView = function() {
     var context = $(contextName);
-    //destroy forms!
+    //also destroy forms!
+    //also destroy viewport!
     context.find('#'+domID).remove();
   }
 
