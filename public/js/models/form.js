@@ -20,6 +20,12 @@ function Form(contextName, id, formType) {
     context.on('keyup', 'input', saveFormValue);
   }
 
+  var destroyView = function() {
+    var context = $(contextName);
+    formValues = {};
+    context.find('#'+domID).remove();
+  }
+
   var saveFormValue = function(event) {
     var fieldName = event.target.name;
     var fieldValue = event.target.value;
@@ -35,7 +41,8 @@ function Form(contextName, id, formType) {
   }
 
   return {
-    render: renderView
+    render: renderView,
+    destroy: destroyView
   }
 }
 

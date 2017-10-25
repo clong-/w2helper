@@ -1,11 +1,13 @@
 function Viewport(contextName, id, childType) {
+  //set rendering-related variables
   var contextName = contextName;
   var template = require('../templates/viewport');
   var domID = id;
-  var childType = childType;
 
+  //set logic-related variables
+  var childType = childType;
   var children = [];
-  var currentChildIndex = undefined;
+  var currentChildIndex;
 
   var renderView = function() {
     var context = $(contextName);
@@ -31,6 +33,15 @@ function Viewport(contextName, id, childType) {
     if(children.length) {
       children[currentChildIndex].render();
     }
+  }
+
+  var destroyView = function() {
+    var context = $(contextName);
+    children.forEach(function(c,i) {
+      c.destroy();
+    });
+    children = [];
+    context.empty();
   }
 
   var shiftView = function(operator) {
@@ -64,6 +75,7 @@ function Viewport(contextName, id, childType) {
 
   return {
     render: renderView,
+    destroy: destroyView,
     shiftView: shiftView,
     setChildren: setChildren
   }

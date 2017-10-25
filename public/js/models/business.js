@@ -24,6 +24,7 @@ function Business(contextName, id) {
       domID: domID,
       employees: employees
     }));
+    //render forms here!
     viewport.render();
     context.on('click', '#add-employee-to-'+domID, addEmployee);
     context.on('click', '.remove-employee', removeEmployee);
@@ -47,8 +48,12 @@ function Business(contextName, id) {
       e.destroy();
     });
     employees = [];
-    //also destroy forms!
-    //also destroy viewport!
+    viewport.destroy();
+    viewport = {};
+    Object.keys(forms).forEach(function(formName) {
+      forms[formName].destroy();
+    });
+    forms = {};
     context.find('#'+domID).remove();
   }
 
@@ -81,21 +86,23 @@ function Business(contextName, id) {
     updateView();
   }
 
+  var initForms = function(formTypes) {
+    //add initial forms here
+  }
+
   var addForm = function(formType) {
     if(!forms[formType]) {
       forms[formType] = Form(
         [contextName, '#'+domID, '.business-forms'].join(' '),
-        [domID, formType, 'form'].join('-')
+        [domID, formType, 'form'].join('-'),
+        formType
       );
     }
     updateView();
   }
 
   var removeForm = function(formType) {
-    /*
-    forms[formType] = undefined;
-    updateView();
-    */
+    //implement me eventually!
   }
 
   return {

@@ -15,7 +15,9 @@ function Employee(contextName, id) {
       domID: domID,
       forms: forms
     }));
-    addForm('w2');
+    Object.keys(forms).forEach(function(formName) {
+      forms[formName].render();
+    });
   }
 
   var updateView = function() {
@@ -31,9 +33,19 @@ function Employee(contextName, id) {
 
   var destroyView = function() {
     var context = $(contextName);
-    //also destroy forms!
-    //also destroy viewport!
+    Object.keys(forms).forEach(function(formName) {
+      forms[formName].destroy();
+    });
+    forms = {};
     context.find('#'+domID).remove();
+  }
+
+  var initForms = function() {
+    forms['w2'] = Form(
+      [contextName, '#'+domID, '.employee-forms'].join(' '),
+      [domID, 'w2', 'form'].join('-'),
+      'w2'
+    );
   }
 
   var addForm = function(formType) {
@@ -48,12 +60,11 @@ function Employee(contextName, id) {
   }
 
   var removeForm = function(formType) {
-    /*
-    forms[formType] = undefined;
-    updateView();
-    */
+    //implement me eventually!
   }
 
+  initForms();
+  
   return {
     render: renderView,
     destroy: destroyView,
