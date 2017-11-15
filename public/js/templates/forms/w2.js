@@ -1,4 +1,4 @@
-var w2Template = $.templates('w2',
+var w2FormTemplate = $.templates('w2Form',
 
 "<div class='w2-form'>" +
 "  <!--first row-->" +
@@ -86,4 +86,4 @@ var w2Template = $.templates('w2',
 
 );
 
-module.exports = w2Template;
+module.exports = w2FormTemplate;

@@ -12,8 +12,7 @@ function Employee(contextName, id) {
   var renderView = function() {
     var context = $(contextName);
     context.append(template.render({
-      domID: domID,
-      forms: forms
+      domID: domID
     }));
     Object.keys(forms).forEach(function(formName) {
       forms[formName].render();
@@ -60,11 +59,11 @@ function Employee(contextName, id) {
   }
 
   var removeForm = function(formType) {
-    //implement me eventually!
+    //implement me eventually?
   }
 
   initForms();
-  
+
   return {
     render: renderView,
     destroy: destroyView,

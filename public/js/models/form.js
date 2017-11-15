@@ -1,4 +1,6 @@
 var formTemplates = {
+  report: require('../templates/forms/report'),
+  business: require('../templates/forms/business'),
   w2: require('../templates/forms/w2')
 };
 

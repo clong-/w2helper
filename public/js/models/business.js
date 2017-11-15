@@ -24,7 +24,9 @@ function Business(contextName, id) {
       domID: domID,
       employees: employees
     }));
-    //render forms here!
+    Object.keys(forms).forEach(function(formName) {
+      forms[formName].render();
+    });
     viewport.render();
     context.on('click', '#add-employee-to-'+domID, addEmployee);
     context.on('click', '.remove-employee', removeEmployee);
@@ -87,7 +89,11 @@ function Business(contextName, id) {
   }
 
   var initForms = function(formTypes) {
-    //add initial forms here
+    forms['business'] = Form(
+      [contextName, '#'+domID, '.business-forms'].join(' '),
+      [domID, 'business', 'form'].join('-'),
+      'business'
+    );
   }
 
   var addForm = function(formType) {
@@ -104,6 +110,8 @@ function Business(contextName, id) {
   var removeForm = function(formType) {
     //implement me eventually!
   }
+
+  initForms();
 
   return {
     render: renderView,

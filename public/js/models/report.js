@@ -1,4 +1,5 @@
 var Business = require('./business');
+var Form = require('./form');
 var Viewport = require('./viewport');
 
 function Report(contextName, id) {
@@ -10,6 +11,7 @@ function Report(contextName, id) {
   //set logic-related variables
   var businesses = [];
   var nextBusinessID = 0;
+  var forms = {};
   var viewport = Viewport(
     [contextName, '#'+domID, ".businesses-pane"].join(" "),
     [domID, 'viewport'].join("-"),
@@ -22,6 +24,9 @@ function Report(contextName, id) {
       domID: domID,
       businesses: businesses
     }));
+    Object.keys(forms).forEach(function(formName) {
+      forms[formName].render();
+    });
     viewport.render();
     context.on('click', '#add-business-to-'+domID, addBusiness);
     context.on('click', '.remove-business', removeBusiness);
@@ -33,6 +38,9 @@ function Report(contextName, id) {
       domID: domID,
       businesses: businesses
     }));
+    Object.keys(forms).forEach(function(formName) {
+      forms[formName].render();
+    });
     viewport.render();
   }
 
@@ -64,6 +72,31 @@ function Report(contextName, id) {
     viewport.shiftView('prev');
     updateView();
   }
+
+  var initForms = function(formTypes) {
+    forms['report'] = Form(
+      [contextName, '#'+domID, '.report-forms'].join(' '),
+      [domID, 'report', 'form'].join('-'),
+      'report'
+    );
+  }
+
+  var addForm = function(formType) {
+    if(!forms[formType]) {
+      forms[formType] = Form(
+        [contextName, '#'+domID, '.report-forms'].join(' '),
+        [domID, formType, 'form'].join('-'),
+        formType
+      );
+    }
+    updateView();
+  }
+
+  var removeForm = function(formType) {
+    //implement me eventually!
+  }
+
+  initForms();
 
   return {
     render: renderView,
