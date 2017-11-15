@@ -59,6 +59,56 @@ h1, h2, h3 {
   padding-top: 10px;
 }
 
+.w2-form div, .w2-form {
+  border: 1px solid black;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.w2-form {
+  display: inline-block;
+  width: 898px;
+  height: 500px;
+  box-sizing: border-box;
+  font-size: 0;
+  background-image: url(../assets/w2-2017.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.w2-field {
+  display: inline-block;
+  height: 8%;
+}
+
+.w2-field.mid-left {
+  width: 54.6%;
+}
+
+.w2-field.mid-right {
+  width: 22.7%;
+}
+
+.w2-field.half-high {
+  height: 4.01%;
+  background-color: #AAA;
+}
+
+.w2-field.two-half-high {
+  height: 20%;
+  float: left;
+}
+
+.w2-field.three-high {
+  height: 24%;
+  float: left;
+}
+
+.w2-field.three-half-high {
+  height: 28%;
+  float: left;
+}
+
 #printout {
   margin: 30px;
   font-family: courier;

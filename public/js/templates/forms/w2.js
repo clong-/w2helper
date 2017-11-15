@@ -1,21 +1,87 @@
 var w2Template = $.templates('w2',
 
-"<div id='{{:domID}}' class='box'>" +
-"  <h3>Employee W2</h3>" +
-"  <form class='employee form-horizontal' id='employee-{{:id}}'>" +
-"    <div class='field form-group'>" +
-"      <label class='col-sm-1 control-label'>Employee Name:</label>" +
-"      <div class='col-sm-3'>" +
-"        <input class='form-control' name='employee-name'></input>" +
-"      </div>" +
-"    </div>" +
-"    <div class='field form-group'>" +
-"      <label class='col-sm-1 control-label'>Employee Wages:</label>" +
-"      <div class='col-sm-3'>" +
-"        <input class='form-control' name='employee-wages'></input>" +
-"      </div>" +
-"    </div>" +
-"  </form>" +
+"<div class='w2-form'>" +
+"  <!--first row-->" +
+"  <div class='w2-field' style='width: 12%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 9.3%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 24%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 54.7%'>" +
+"  </div>" +
+"  <!--middle section-->" +
+"  <div class='w2-field mid-left'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-left three-high'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-left'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-left'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-left three-half-high'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-right two-half-high'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-right'>" +
+"  </div>" +
+"  <div class='w2-field mid-right half-high'>" +
+"  </div>" +
+"  <!--bottom row-->" +
+"  <div class='w2-field' style='width: 29.3%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 16%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 14.7%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 16%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 14.7%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 9.3%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 29.3%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 16%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 14.7%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 16%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 14.7%'>" +
+"  </div>" +
+"  <div class='w2-field' style='width: 9.3%'>" +
+"  </div>" +
 "</div>"
 
 );
