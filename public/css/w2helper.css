@@ -86,6 +86,21 @@ h1, h2, h3 {
   background-repeat: no-repeat;
 }
 
+.report-form div, .report-form {
+  box-sizing: border-box;
+}
+
+.report-form {
+  border: 1px solid black;
+  display: inline-block;
+  width: 400px;
+  height: 82px;
+  box-sizing: border-box;
+  font-size: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .field {
   border: 1px solid black;
   display: inline-block;
@@ -109,6 +124,11 @@ h1, h2, h3 {
 .field.full-right {
   width: 25%;
   height: 33.33%;
+}
+
+.field.halfsies {
+  width: 50%;
+  height: 50%;
 }
 
 .field.half-high {
@@ -188,6 +208,16 @@ h1, h2, h3 {
 
 .field-subinput.initial {
   width: 20%;
+  float: left;
+}
+
+.field-subinput.phone {
+  width: 75%;
+  float: left;
+}
+
+.field-subinput.phone-ext {
+  width: 25%;
   float: left;
 }
 
