@@ -56,16 +56,16 @@ var w2FormTemplate = $.templates('w2Form',
 "    </div>" +
 "    <div class='field-input'>" +
 "      <div class='field-subinput city'>" +
-"        <input name='business-city'></input>" +
+"        <input name='business-add-city'></input>" +
 "      </div>" +
 "      <div class='field-subinput state'>" +
-"        <input name='business-state'></input>" +
+"        <input name='business-add-state'></input>" +
 "      </div>" +
 "      <div class='field-subinput zip'>" +
-"        <input name='business-zip'></input>" +
+"        <input name='business-add-zip'></input>" +
 "      </div>" +
 "      <div class='field-subinput zip-ext'>" +
-"        <input name='business-zip-ext'></input>" +
+"        <input name='business-add-zip-ext'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +

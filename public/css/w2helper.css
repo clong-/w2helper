@@ -71,6 +71,21 @@ h1, h2, h3 {
   background-repeat: no-repeat;
 }
 
+.business-form div, .business-form {
+  box-sizing: border-box;
+}
+
+.business-form {
+  border: 1px solid black;
+  display: inline-block;
+  width: 800px;
+  height: 123px;
+  box-sizing: border-box;
+  font-size: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .field {
   border: 1px solid black;
   display: inline-block;
@@ -84,6 +99,16 @@ h1, h2, h3 {
 
 .field.mid-right {
   width: 22.7%;
+}
+
+.field.full-left {
+  width: 50%;
+  height: 100%;
+}
+
+.field.full-right {
+  width: 25%;
+  height: 33.33%;
 }
 
 .field.half-high {
@@ -164,7 +189,6 @@ h1, h2, h3 {
 .field-subinput.initial {
   width: 20%;
   float: left;
-  margin-bottom: 3px;
 }
 
 .subfield.first-name {
