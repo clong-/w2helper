@@ -28,8 +28,8 @@ function Business(contextName, id) {
       forms[formName].render();
     });
     viewport.render();
-    context.on('click', '#add-employee-to-'+domID, addEmployee);
-    context.on('click', '.remove-employee', removeEmployee);
+    context.find('#'+domID).on('click', '#add-employee-to-'+domID, addEmployee);
+    context.find('#'+domID).on('click', '.remove-employee', removeEmployee);
   }
 
   var updateView = function() {
@@ -42,6 +42,8 @@ function Business(contextName, id) {
       forms[formName].render();
     });
     viewport.render();
+    context.find('#'+domID).on('click', '#add-employee-to-'+domID, addEmployee);
+    context.find('#'+domID).on('click', '.remove-employee', removeEmployee);
   }
 
   var destroyView = function() {
