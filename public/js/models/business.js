@@ -19,7 +19,7 @@ function Business(contextName, id) {
   )
 
   var renderView = function() {
-    var context = $(contextName)
+    var context = $(contextName);
     context.append(template.render({
       domID: domID,
       employees: employees
