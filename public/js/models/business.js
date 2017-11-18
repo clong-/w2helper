@@ -1,4 +1,6 @@
 var Employee = require('./employee');
+var Form = require('./form');
+var Viewport = require('./viewport');
 
 function Business(contextName, id) {
   //set rendering-related variables
@@ -9,16 +11,25 @@ function Business(contextName, id) {
   //set logic-related variables
   var employees = [];
   var nextEmployeeID = 0;
+  var forms = {};
+  var viewport = Viewport(
+    [contextName, '#'+domID, ".employees-pane"].join(" "),
+    [domID, 'viewport'].join("-"),
+    'employee'
+  )
 
   var renderView = function() {
-    var context = $(contextName)
+    var context = $(contextName);
     context.append(template.render({
       domID: domID,
       employees: employees
     }));
-    employees.forEach(function(e) { e.render() });
-    context.on('click', '#add-employee-to-'+domID, addEmployee);
-    context.on('click', '.remove-employee', removeEmployee);
+    Object.keys(forms).forEach(function(formName) {
+      forms[formName].render();
+    });
+    viewport.render();
+    context.find('#'+domID).on('click', '#add-employee-to-'+domID, addEmployee);
+    context.find('#'+domID).on('click', '.remove-employee', removeEmployee);
   }
 
   var updateView = function() {
@@ -27,7 +38,12 @@ function Business(contextName, id) {
       domID: domID,
       employees: employees
     }));
-    employees.forEach(function(e) { e.render() });
+    Object.keys(forms).forEach(function(formName) {
+      forms[formName].render();
+    });
+    viewport.render();
+    context.find('#'+domID).on('click', '#add-employee-to-'+domID, addEmployee);
+    context.find('#'+domID).on('click', '.remove-employee', removeEmployee);
   }
 
   var destroyView = function() {
@@ -36,6 +52,12 @@ function Business(contextName, id) {
       e.destroy();
     });
     employees = [];
+    viewport.destroy();
+    viewport = {};
+    Object.keys(forms).forEach(function(formName) {
+      forms[formName].destroy();
+    });
+    forms = {};
     context.find('#'+domID).remove();
   }
 
@@ -47,6 +69,8 @@ function Business(contextName, id) {
       )
     );
     nextEmployeeID += 1;
+    viewport.setChildren(employees);
+    viewport.shiftView('last');
     updateView();
   }
 
@@ -61,8 +85,35 @@ function Business(contextName, id) {
         break;
       }
     }
+    viewport.setChildren(employees);
+    viewport.shiftView('prev');
     updateView();
   }
+
+  var initForms = function(formTypes) {
+    forms['business'] = Form(
+      [contextName, '#'+domID, '.business-forms'].join(' '),
+      [domID, 'business', 'form'].join('-'),
+      'business'
+    );
+  }
+
+  var addForm = function(formType) {
+    if(!forms[formType]) {
+      forms[formType] = Form(
+        [contextName, '#'+domID, '.business-forms'].join(' '),
+        [domID, formType, 'form'].join('-'),
+        formType
+      );
+    }
+    updateView();
+  }
+
+  var removeForm = function(formType) {
+    //implement me eventually!
+  }
+
+  initForms();
 
   return {
     render: renderView,

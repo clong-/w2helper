@@ -1,16 +1,14 @@
 TODO:
 - MVP:
-  - Forms
-    - With persistence across re-renders
-    - Align forms/fields with file specs
+  - Field validation
   - File export (Blob+FileSaver?)
-    - Read ALL the specs!
-  - Single-page-sized interface
   - Good styling
 - Improvements:
   - Features:
     - Save/load report (in localStorage)
     - Auto-save records (timeout after field update)
+    - Multiple businesses
+    - More forms
     - State-specific options (start with WI and expand?)
     - Import from file
   - Frontend:

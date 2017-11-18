@@ -2,10 +2,6 @@ main {
   margin: 15px;
 }
 
-form {
-  margin-top: 15px;
-}
-
 h1, h2, h3 {
   margin-top: 10px;
 }
@@ -57,6 +53,267 @@ h1, h2, h3 {
 
 .viewport {
   padding-top: 10px;
+}
+
+.w2-form div, .w2-form {
+  box-sizing: border-box;
+}
+
+.w2-form {
+  border: 1px solid black;
+  display: inline-block;
+  width: 898px;
+  height: 500px;
+  box-sizing: border-box;
+  font-size: 0;
+  //background-image: url(http://i.imgur.com/IrqM7Pv.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.business-form div, .business-form {
+  box-sizing: border-box;
+}
+
+.business-form {
+  border: 1px solid black;
+  display: inline-block;
+  width: 800px;
+  height: 123px;
+  box-sizing: border-box;
+  font-size: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.report-form div, .report-form {
+  box-sizing: border-box;
+}
+
+.report-form {
+  border: 1px solid black;
+  display: inline-block;
+  width: 400px;
+  height: 82px;
+  box-sizing: border-box;
+  font-size: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.field {
+  border: 1px solid black;
+  display: inline-block;
+  height: 8%;
+  float: left;
+}
+
+.field.mid-left {
+  width: 54.6%;
+}
+
+.field.mid-right {
+  width: 22.7%;
+}
+
+.field.full-left {
+  width: 50%;
+  height: 100%;
+}
+
+.field.full-right {
+  width: 25%;
+  height: 33.33%;
+}
+
+.field.halfsies {
+  width: 50%;
+  height: 50%;
+}
+
+.field.half-high {
+  height: 4.01%;
+}
+
+.field.two-half-high {
+  height: 20%;
+  float: left;
+}
+
+.field.three-high {
+  height: 24%;
+  float: left;
+}
+
+.field.three-half-high {
+  height: 28%;
+  float: left;
+}
+
+.field label {
+  display: inline-block;
+  font: 8pt sans-serif;
+  color: red;
+  padding: 2px 0 0 3px;
+  margin: 0;
+}
+
+.bottom-label {
+  position: relative;
+  float: left;
+  top: calc(100% - 16px);
+}
+
+.field.empty {
+  background-color: #AAA;
+}
+
+.field-input {
+  margin: 0 10px 3px 10px;
+}
+
+.field-input input {
+  font-size: 10pt;
+  box-sizing: border-box;
+  width: 100%;
+  outline-width: 1px;
+  padding: 0;
+}
+
+.field-subinput.city {
+  width: 35%;
+  float: left;
+}
+
+.field-subinput.state {
+  width: 30%;
+  float: left;
+}
+
+.field-subinput.zip {
+  width: 20%;
+  float: left;
+}
+
+.field-subinput.zip-ext {
+  width: 15%;
+  float: left;
+}
+
+.field-subinput.first-name {
+  width: 80%;
+  float: left;
+  margin-bottom: 3px;
+}
+
+.field-subinput.initial {
+  width: 20%;
+  float: left;
+}
+
+.field-subinput.phone {
+  width: 75%;
+  float: left;
+}
+
+.field-subinput.phone-ext {
+  width: 25%;
+  float: left;
+}
+
+.subfield.first-name {
+  width: 46%;
+  float: left;
+  border-right: 1px dashed black;
+}
+
+.subfield.last-name {
+  width: 46%;
+  float: left;
+  border-left: 1px dashed black;
+  border-right: 1px dashed black;
+}
+
+.subfield.suffix {
+  width: 8%;
+  float: left;
+  border-left: 1px dashed black;
+}
+
+.subfield.code {
+  width: 29%;
+  float: left;
+  border-right: 1px dashed black;
+}
+
+.subfield.amount {
+  width: 70%;
+  float: left;
+  border-left: 1px dashed black;
+}
+
+.subfield.statutory-employee {
+  width: 29.33%;
+  float: left;
+}
+
+.subfield.retirement-plan {
+  width: 29.33%;
+  float: left;
+  padding-left: 1px;
+}
+
+.subfield.third-party-sick-pay {
+  width: 29.33%;
+  float: left;
+  padding-left: 2px;
+}
+
+.subfield.state {
+  width: 25%;
+  float: left;
+  border-right: 1px dashed black;
+}
+
+.subfield.state-id {
+  width: 75%;
+  float: left;
+  border-left: 1px dashed black;
+}
+
+.dashed-bottom {
+  border-bottom: 1px dashed black;
+}
+
+.dashed-top {
+  border-top: 1px dashed black;
+}
+
+.dashed-left {
+  border-left: 1px dashed black;
+}
+
+.dashed-right {
+  border-right: 1px dashed black;
+}
+
+.checkbox {
+  margin-left: 3px;
+}
+
+.checkbox input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.check-label {
+  width: 12%;
+  float: left;
+}
+
+.small-label label {
+  font-size: 6pt;
 }
 
 #printout {
