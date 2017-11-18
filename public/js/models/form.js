@@ -42,9 +42,14 @@ function Form(contextName, id, formType) {
     });
   }
 
+  var serialize = function() {
+    return formValues;
+  }
+
   return {
     render: renderView,
-    destroy: destroyView
+    destroy: destroyView,
+    serialize: serialize
   }
 }
 

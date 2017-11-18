@@ -5,6 +5,7 @@ var reportTemplate = $.templates('report',
 "  <div class='report-forms'>" +
 "  </div>" +
 "  <div class='report-controls controls'>" +
+"    <button id='serialize-report' class='btn btn-default'>Log Report Data</button>" +
 //"    <button id='add-business-to-{{:domID}}' class='btn btn-default'>Add Business</button>" + //multiple businesses
 "  </div>" +
 "  <div class='businesses-pane viewport'>" +

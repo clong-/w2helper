@@ -113,13 +113,28 @@ function Business(contextName, id) {
     //implement me eventually!
   }
 
+  var serialize = function() {
+    return {
+      forms: serializeForms(),
+      employees: employees.map(function(e) { return e.serialize() })
+    }
+  }
+
+  var serializeForms = function() {
+    return Object.keys(forms).reduce(function(map, formName) {
+      map[formName] = forms[formName].serialize();
+      return map;
+    }, {});
+  }
+
   initForms();
 
   return {
     render: renderView,
     destroy: destroyView,
     addEmployee: addEmployee,
-    identifier: domID
+    identifier: domID,
+    serialize: serialize
   }
 }
 
