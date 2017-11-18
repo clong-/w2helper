@@ -6,7 +6,8 @@ var businessTemplate = $.templates('business',
 "  </div>" +
 "  <div class='business-controls controls'>" +
 "    <button id='add-employee-to-{{:domID}}' class='btn btn-default'>Add Employee</button>" +
-"    <button id='remove-{{:domID}}' class='btn btn-default remove-business'>Remove Business</button>" +
+//multiple businesses
+// "    <button id='remove-{{:domID}}' class='btn btn-default remove-business'>Remove Business</button>" +
 "  </div>" +
 "  <div class='employees-pane viewport'>" +
 "  </div>" +
