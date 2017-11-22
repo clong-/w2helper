@@ -316,6 +316,20 @@ h1, h2, h3 {
   font-size: 6pt;
 }
 
+.disabled {
+  background-color: #EEE;
+}
+
+.disabled input {
+  background-color: #EEE;
+  border: 1px solid #CCC;
+  color: #AAA;
+}
+
+.disabled label {
+  color: #F99;
+}
+
 #printout {
   margin: 30px;
   font-family: courier;

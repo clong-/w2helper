@@ -17,12 +17,12 @@ var w2FormTemplate = $.templates('w2Form',
 "  <div class='field empty' style='width: 54.7%'>" +
 "  </div>" +
 "  <!--middle section-->" +
-"  <div class='field mid-left'>" +
+"  <div class='field mid-left disabled'>" +
 "    <label>" +
 "      b&nbsp;&nbsp;Employer identification number (EIN)" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <input name='business-ein'></input>" +
+"      <input name='business-ein' disabled></input>" +
 "    </div>" +
 "  </div>" +
 "  <div class='field mid-right'>" +
@@ -41,31 +41,31 @@ var w2FormTemplate = $.templates('w2Form',
 "      <input name='fed-income-tax'></input>" +
 "    </div>" +
 "  </div>" +
-"  <div class='field mid-left three-high'>" +
+"  <div class='field mid-left three-high disabled'>" +
 "    <label>" +
 "      c&nbsp;&nbsp;Employer's name, address, and ZIP code" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <input name='business-name'></input>" +
+"      <input name='business-name' disabled></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
-"      <input name='business-add1'></input>" +
+"      <input name='business-add1' disabled></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
-"      <input name='business-add2'></input>" +
+"      <input name='business-add2' disabled></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
 "      <div class='field-subinput city'>" +
-"        <input name='business-add-city'></input>" +
+"        <input name='business-add-city' disabled></input>" +
 "      </div>" +
 "      <div class='field-subinput state'>" +
-"        <input name='business-add-state'></input>" +
+"        <input name='business-add-state' disabled></input>" +
 "      </div>" +
 "      <div class='field-subinput zip'>" +
-"        <input name='business-add-zip'></input>" +
+"        <input name='business-add-zip' disabled></input>" +
 "      </div>" +
 "      <div class='field-subinput zip-ext'>" +
-"        <input name='business-add-zip-ext'></input>" +
+"        <input name='business-add-zip-ext' disabled></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +
@@ -117,12 +117,12 @@ var w2FormTemplate = $.templates('w2Form',
 "      <input name='allocated-tips'></input>" +
 "    </div>" +
 "  </div>" +
-"  <div class='field mid-left'>" +
+"  <div class='field mid-left disabled'>" +
 "    <label>" +
 "      d&nbsp;&nbsp;Control number" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <input name='business-control-no'></input>" +
+"      <input name='business-control-no' disabled></input>" +
 "    </div>" +
 "  </div>" +
 "  <div class='field mid-right'>" +
@@ -324,13 +324,13 @@ var w2FormTemplate = $.templates('w2Form',
 "  <div class='field mid-right half-high empty'>" +
 "  </div>" +
 "  <!--bottom row-->" +
-"  <div class='field dashed-bottom' style='width: 29.3%'>" +
+"  <div class='field dashed-bottom disabled' style='width: 29.3%'>" +
 "    <div class='subfield state'>" +
 "      <label>" +
 "        15&nbsp;&nbsp;State" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='business-state'></input>" +
+"        <input name='business-state' disabled></input>" +
 "      </div>" +
 "    </div>" +
 "    <div class='subfield state-id'>" +
@@ -338,7 +338,7 @@ var w2FormTemplate = $.templates('w2Form',
 "        Employer's state ID number" +
 "      </label>" +
 "      <div class='field-input'>" +
-"      <input name='business-state-id'></input>" +
+"      <input name='business-state-id' disabled></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +
