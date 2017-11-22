@@ -316,17 +316,17 @@ h1, h2, h3 {
   font-size: 6pt;
 }
 
-.disabled {
+.inherited {
   background-color: #EEE;
 }
 
-.disabled input {
+.inherited input {
   background-color: #EEE;
   border: 1px solid #CCC;
   color: #AAA;
 }
 
-.disabled label {
+.inherited label {
   color: #F99;
 }
 

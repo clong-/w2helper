@@ -17,7 +17,7 @@ var w2FormTemplate = $.templates('w2Form',
 "  <div class='field empty' style='width: 54.7%'>" +
 "  </div>" +
 "  <!--middle section-->" +
-"  <div class='field mid-left disabled'>" +
+"  <div class='field mid-left inherited'>" +
 "    <label>" +
 "      b&nbsp;&nbsp;Employer identification number (EIN)" +
 "    </label>" +
@@ -41,7 +41,7 @@ var w2FormTemplate = $.templates('w2Form',
 "      <input name='fed-income-tax'></input>" +
 "    </div>" +
 "  </div>" +
-"  <div class='field mid-left three-high disabled'>" +
+"  <div class='field mid-left three-high inherited'>" +
 "    <label>" +
 "      c&nbsp;&nbsp;Employer's name, address, and ZIP code" +
 "    </label>" +
@@ -117,7 +117,7 @@ var w2FormTemplate = $.templates('w2Form',
 "      <input name='allocated-tips'></input>" +
 "    </div>" +
 "  </div>" +
-"  <div class='field mid-left disabled'>" +
+"  <div class='field mid-left inherited'>" +
 "    <label>" +
 "      d&nbsp;&nbsp;Control number" +
 "    </label>" +
@@ -324,7 +324,7 @@ var w2FormTemplate = $.templates('w2Form',
 "  <div class='field mid-right half-high empty'>" +
 "  </div>" +
 "  <!--bottom row-->" +
-"  <div class='field dashed-bottom disabled' style='width: 29.3%'>" +
+"  <div class='field dashed-bottom inherited' style='width: 29.3%'>" +
 "    <div class='subfield state'>" +
 "      <label>" +
 "        15&nbsp;&nbsp;State" +
