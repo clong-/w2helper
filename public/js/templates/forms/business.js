@@ -6,26 +6,26 @@ var businessFormTemplate = $.templates('businessForm',
 "      Employer's name, address, and ZIP code" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <input name='business-name'></input>" +
+"      <input name='business-name' data-propagate-to='w2'></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
-"      <input name='business-add1'></input>" +
+"      <input name='business-add1' data-propagate-to='w2'></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
-"      <input name='business-add2'></input>" +
+"      <input name='business-add2' data-propagate-to='w2'></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
 "      <div class='field-subinput city'>" +
-"        <input name='business-add-city'>" +
+"        <input name='business-add-city' data-propagate-to='w2'></input>" +
 "      </div>" +
 "      <div class='field-subinput state'>" +
-"        <input name='business-add-state'>" +
+"        <input name='business-add-state' data-propagate-to='w2'></input>" +
 "      </div>" +
 "      <div class='field-subinput zip'>" +
-"        <input name='business-add-zip'>" +
+"        <input name='business-add-zip' data-propagate-to='w2'></input>" +
 "      </div>" +
 "      <div class='field-subinput zip-ext'>" +
-"        <input name='business-add-zip-ext'>" +
+"        <input name='business-add-zip-ext' data-propagate-to='w2'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +
@@ -34,7 +34,7 @@ var businessFormTemplate = $.templates('businessForm',
 "      Employer identification number (EIN)" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <input name='business-ein'></input>" +
+"      <input name='business-ein' data-propagate-to='w2'></input>" +
 "    </div>" +
 "  </div>" +
 "  <div class='field full-right'>" +
@@ -42,7 +42,7 @@ var businessFormTemplate = $.templates('businessForm',
 "      Control number" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <input name='business-control-no'></input>" +
+"      <input name='business-control-no' data-propagate-to='w2'></input>" +
 "    </div>" +
 "  </div>" +
 "  <div class='field full-right'>" +
@@ -67,7 +67,7 @@ var businessFormTemplate = $.templates('businessForm',
 "        State" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='business-state'></input>" +
+"        <input name='business-state' data-propagate-to='w2'></input>" +
 "      </div>" +
 "    </div>" +
 "    <div class='subfield state-id'>" +
@@ -75,7 +75,7 @@ var businessFormTemplate = $.templates('businessForm',
 "        Employer's state ID number" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='business-state-id'></input>" +
+"        <input name='business-state-id' data-propagate-to='w2'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +

@@ -75,13 +75,22 @@ function Employee(contextName, id) {
     }, {});
   }
 
+  var propagateFormData = function(data) {
+    Object.keys(data).forEach(function(formName) {
+      Object.keys(data[formName]).forEach(function(fieldName) {
+        forms[formName].setField(fieldName, data[formName][fieldName]);
+      });
+    });
+  }
+
   initForms();
 
   return {
     render: renderView,
     destroy: destroyView,
     identifier: domID,
-    serialize: serialize
+    serialize: serialize,
+    propagateFormData: propagateFormData
   }
 }
 

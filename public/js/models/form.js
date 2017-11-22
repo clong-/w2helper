@@ -19,7 +19,17 @@ function Form(contextName, id, formType) {
       formValues: formValues
     }));
     loadFormValues();
-    context.on('keyup', 'input', saveFormValue);
+    context.on('change', 'input', saveFormValue);
+  }
+
+  var updateView = function() {
+    var context = $(contextName);
+    context.empty().append(template.render({
+      domID: domID,
+      formValues: formValues
+    }));
+    loadFormValues();
+    context.on('change', 'input', saveFormValue);
   }
 
   var destroyView = function() {
@@ -31,8 +41,11 @@ function Form(contextName, id, formType) {
   var saveFormValue = function(event) {
     var fieldName = event.target.name;
     var fieldValue = event.target.value;
+    var propagateTo = event.target.dataset.propagateTo;
     formValues[fieldName] = fieldValue;
-    console.log('[saved] ' + fieldName + ': ' + fieldValue);
+    if(typeof propagateTo !== 'undefined') {
+      triggerPropagation(propagateTo, fieldName, fieldValue);
+    }
   }
 
   var loadFormValues = function() {
@@ -46,10 +59,34 @@ function Form(contextName, id, formType) {
     return formValues;
   }
 
+  var triggerPropagation = function(formName, fieldName, fieldValue) {
+    var data = {};
+    data[formName] = {};
+    data[formName][fieldName] = fieldValue;
+    $(contextName).trigger('propagate-field', data);
+  }
+
+  var setField = function(fieldName, fieldValue) {
+    formValues[fieldName] = fieldValue;
+    updateView();
+  }
+
+  var dataToPropagate = function() {
+    var fields = $(contextName).find('#'+domID).find('input[data-propagate-to]');
+    return fields.toArray().reduce(function(map, field) {
+      var propagateTo = field.dataset.propagateTo;
+      if(!map[propagateTo]) map[propagateTo] = {};
+      map[propagateTo][field.name] = field.value;
+      return map;
+    }, {});
+  }
+
   return {
     render: renderView,
     destroy: destroyView,
-    serialize: serialize
+    serialize: serialize,
+    setField: setField,
+    dataToPropagate: dataToPropagate
   }
 }
 
