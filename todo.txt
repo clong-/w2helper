@@ -21,7 +21,7 @@ TODO:
       - Move things out of public -- only deploy bundles/assets
       - Put examples in a folder
     - Dependency management
-      - Bundle CSS
+      - Split and bundle CSS (sass)
       - Install JS and CSS vendor libs with npm?
       - And then also bundle them
-      - Gulp?
+      - Gulp? Grunt?
