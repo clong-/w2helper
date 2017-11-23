@@ -4,6 +4,22 @@ var formTemplates = {
   w2: require('../templates/forms/w2')
 };
 
+var inheritedFields = {
+  w2: [
+    'business-name',
+    'business-add1',
+    'business-add2',
+    'business-add-city',
+    'business-add-state',
+    'business-add-zip',
+    'business-add-zip-ext',
+    'business-ein',
+    'business-control-no',
+    'business-state',
+    'business-state-id'
+  ]
+};
+
 function Form(contextName, id, formType) {
   var contextName = contextName;
   var formType = formType;
@@ -11,6 +27,7 @@ function Form(contextName, id, formType) {
   var domID = id;
 
   var formValues = {};
+  var inheritedFormValues = {};
 
   var renderView = function() {
     var context = $(contextName);
@@ -50,6 +67,9 @@ function Form(contextName, id, formType) {
 
   var loadFormValues = function() {
     var context = $('#'+domID);
+    Object.keys(inheritedFormValues).forEach(function(fieldName) {
+      context.find('input[name="'+fieldName+'"]').attr('value', inheritedFormValues[fieldName]);
+    });
     Object.keys(formValues).forEach(function(fieldName) {
       context.find('input[name="'+fieldName+'"]').attr('value', formValues[fieldName]);
     });
@@ -67,7 +87,11 @@ function Form(contextName, id, formType) {
   }
 
   var setField = function(fieldName, fieldValue) {
-    formValues[fieldName] = fieldValue;
+    if(inheritedFields[formType].indexOf(fieldName) >= 0) {
+      inheritedFormValues[fieldName] = fieldValue;
+    } else {
+      formValues[fieldName] = fieldValue;
+    }
     updateView();
   }
 
