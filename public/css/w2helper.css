@@ -316,6 +316,20 @@ h1, h2, h3 {
   font-size: 6pt;
 }
 
+.inherited {
+  background-color: #EEE;
+}
+
+.inherited input {
+  background-color: #EEE;
+  border: 1px solid #CCC;
+  color: #AAA;
+}
+
+.inherited label {
+  color: #F99;
+}
+
 #printout {
   margin: 30px;
   font-family: courier;

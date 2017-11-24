@@ -39,6 +39,7 @@ function Report(contextName, id) {
     //viewport.render();
     //context.on('click', '#add-business-to-'+domID, addBusiness);
     //context.on('click', '.remove-business', removeBusiness);
+    context.on('click', '#serialize-report', function() { window.report = serialize(); console.log(window.report) });
   }
 
   var updateView = function() {
@@ -107,12 +108,27 @@ function Report(contextName, id) {
     //implement me eventually!
   }
 
+  var serialize = function() {
+    return {
+      forms: serializeForms(),
+      businesses: businesses.map(function(b) { return b.serialize() })
+    }
+  }
+
+  var serializeForms = function() {
+    return Object.keys(forms).reduce(function(map, formName) {
+      map[formName] = forms[formName].serialize();
+      return map;
+    }, {});
+  }
+
   initForms();
 
   return {
     render: renderView,
     //addBusiness: addBusiness, //multiple businesses
-    identifier: domID
+    identifier: domID,
+    serialize: serialize
   }
 }
 

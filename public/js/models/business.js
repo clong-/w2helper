@@ -30,6 +30,7 @@ function Business(contextName, id) {
     viewport.render();
     context.find('#'+domID).on('click', '#add-employee-to-'+domID, addEmployee);
     context.find('#'+domID).on('click', '.remove-employee', removeEmployee);
+    context.find('#'+domID).on('propagate-field', '.business-forms', propagateField);
   }
 
   var updateView = function() {
@@ -44,6 +45,7 @@ function Business(contextName, id) {
     viewport.render();
     context.find('#'+domID).on('click', '#add-employee-to-'+domID, addEmployee);
     context.find('#'+domID).on('click', '.remove-employee', removeEmployee);
+    context.find('#'+domID).on('propagate-field', '.business-forms', propagateField);
   }
 
   var destroyView = function() {
@@ -62,12 +64,12 @@ function Business(contextName, id) {
   }
 
   var addEmployee = function() {
-    employees.push(
-      Employee(
-        [contextName, '#'+domID, ".employees-pane"].join(" "),
-        [domID, 'employee', nextEmployeeID].join("-")
-      )
+    var newEmployee = Employee(
+      [contextName, '#'+domID, ".employees-pane"].join(" "),
+      [domID, 'employee', nextEmployeeID].join("-")
     );
+    employees.push(newEmployee);
+    newEmployee.propagateFormData(dataToPropagate());
     nextEmployeeID += 1;
     viewport.setChildren(employees);
     viewport.shiftView('last');
@@ -113,13 +115,44 @@ function Business(contextName, id) {
     //implement me eventually!
   }
 
+  var serialize = function() {
+    return {
+      forms: serializeForms(),
+      employees: employees.map(function(e) { return e.serialize() })
+    }
+  }
+
+  var serializeForms = function() {
+    return Object.keys(forms).reduce(function(map, formName) {
+      map[formName] = forms[formName].serialize();
+      return map;
+    }, {});
+  }
+
+  var propagateField = function(event, data) {
+    employees.forEach(function(e) {
+      e.propagateFormData(data);
+    });
+  }
+
+  var dataToPropagate = function() {
+    return Object.keys(forms).map(function(formName) {
+      return forms[formName].dataToPropagate();
+    }).reduce(function(map, data) {
+      var key = Object.keys(data)[0];
+      map[key] = data[key];
+      return map;
+    }, {});
+  }
+
   initForms();
 
   return {
     render: renderView,
     destroy: destroyView,
     addEmployee: addEmployee,
-    identifier: domID
+    identifier: domID,
+    serialize: serialize
   }
 }
 

@@ -62,12 +62,35 @@ function Employee(contextName, id) {
     //implement me eventually?
   }
 
+  var serialize = function() {
+    return {
+      forms: serializeForms()
+    }
+  }
+
+  var serializeForms = function() {
+    return Object.keys(forms).reduce(function(map, formName) {
+      map[formName] = forms[formName].serialize();
+      return map;
+    }, {});
+  }
+
+  var propagateFormData = function(data) {
+    Object.keys(data).forEach(function(formName) {
+      Object.keys(data[formName]).forEach(function(fieldName) {
+        forms[formName].setField(fieldName, data[formName][fieldName]);
+      });
+    });
+  }
+
   initForms();
 
   return {
     render: renderView,
     destroy: destroyView,
-    identifier: domID
+    identifier: domID,
+    serialize: serialize,
+    propagateFormData: propagateFormData
   }
 }
 
