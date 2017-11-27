@@ -6,7 +6,10 @@ var formTemplates = {
 
 var inheritedFields = {
   w2: [
-    'business-name',
+    'business-first-name',
+    'business-initial',
+    'business-last-name',
+    'business-suffix',
     'business-add1',
     'business-add2',
     'business-add-city',
@@ -36,7 +39,7 @@ function Form(contextName, id, formType) {
       formValues: formValues
     }));
     loadFormValues();
-    context.on('change', 'input', saveFormValue);
+    context.on('change', 'input, textarea', saveFormValue);
   }
 
   var updateView = function() {
@@ -46,7 +49,7 @@ function Form(contextName, id, formType) {
       formValues: formValues
     }));
     loadFormValues();
-    context.on('change', 'input', saveFormValue);
+    context.on('change', 'input, textarea', saveFormValue);
   }
 
   var destroyView = function() {
@@ -57,9 +60,15 @@ function Form(contextName, id, formType) {
 
   var saveFormValue = function(event) {
     var fieldName = event.target.name;
-    var fieldValue = event.target.value;
+    var fieldValue = '';
     var propagateTo = event.target.dataset.propagateTo;
+    if(event.target.type === 'checkbox') {
+      fieldValue = event.target.checked ? 'checked' : 'unchecked';
+    } else {
+      fieldValue = event.target.value;
+    }
     formValues[fieldName] = fieldValue;
+    console.log('[saved] '+fieldName+': '+fieldValue);
     if(typeof propagateTo !== 'undefined') {
       triggerPropagation(propagateTo, fieldName, fieldValue);
     }
@@ -68,10 +77,20 @@ function Form(contextName, id, formType) {
   var loadFormValues = function() {
     var context = $('#'+domID);
     Object.keys(inheritedFormValues).forEach(function(fieldName) {
-      context.find('input[name="'+fieldName+'"]').attr('value', inheritedFormValues[fieldName]);
+      var target = context.find('input[name="'+fieldName+'"], textarea[name="'+fieldName+'"]');
+      if(target.attr('type') === 'checkbox') {
+        target.prop('checked', inheritedFormValues[fieldName] === 'checked');
+      } else {
+        target.val(inheritedFormValues[fieldName]);
+      }
     });
     Object.keys(formValues).forEach(function(fieldName) {
-      context.find('input[name="'+fieldName+'"]').attr('value', formValues[fieldName]);
+      var target = context.find('input[name="'+fieldName+'"], textarea[name="'+fieldName+'"]');
+      if(target.attr('type') === 'checkbox') {
+        target.prop('checked', formValues[fieldName] === 'checked');
+      } else {
+        target.val(formValues[fieldName]);
+      }
     });
   }
 

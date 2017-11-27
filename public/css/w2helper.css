@@ -6,6 +6,10 @@ h1, h2, h3 {
   margin-top: 10px;
 }
 
+textarea {
+  resize: none;
+}
+
 .form, #employees {
   border: 2px solid black;
   border-radius: 10px;
@@ -172,7 +176,8 @@ h1, h2, h3 {
   margin: 0 10px 3px 10px;
 }
 
-.field-input input {
+.field-input input,
+.field-input textarea {
   font-size: 10pt;
   box-sizing: border-box;
   width: 100%;
@@ -218,6 +223,26 @@ h1, h2, h3 {
 
 .field-subinput.phone-ext {
   width: 25%;
+  float: left;
+}
+
+.field-subinput.business-first-name {
+  width: 43%;
+  float: left;
+}
+
+.field-subinput.business-initial {
+  width: 7%;
+  float: left;
+}
+
+.field-subinput.business-last-name {
+  width: 43%;
+  float: left;
+}
+
+.field-subinput.business-suffix {
+  width: 7%;
   float: left;
 }
 
@@ -304,7 +329,7 @@ h1, h2, h3 {
 .checkbox input {
   width: 20px;
   height: 20px;
-  margin: 0;
+  margin: 0 !important;
 }
 
 .check-label {
