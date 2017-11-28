@@ -177,7 +177,8 @@ textarea {
 }
 
 .field-input input,
-.field-input textarea {
+.field-input textarea,
+.field-input select {
   font-size: 10pt;
   box-sizing: border-box;
   width: 100%;

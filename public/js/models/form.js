@@ -39,7 +39,7 @@ function Form(contextName, id, formType) {
       formValues: formValues
     }));
     loadFormValues();
-    context.on('change', 'input, textarea', saveFormValue);
+    context.on('change', 'input, textarea, select', saveFormValue);
   }
 
   var updateView = function() {
@@ -49,7 +49,7 @@ function Form(contextName, id, formType) {
       formValues: formValues
     }));
     loadFormValues();
-    context.on('change', 'input, textarea', saveFormValue);
+    context.on('change', 'input, textarea, select', saveFormValue);
   }
 
   var destroyView = function() {
@@ -68,7 +68,6 @@ function Form(contextName, id, formType) {
       fieldValue = event.target.value;
     }
     formValues[fieldName] = fieldValue;
-    console.log('[saved] '+fieldName+': '+fieldValue);
     if(typeof propagateTo !== 'undefined') {
       triggerPropagation(propagateTo, fieldName, fieldValue);
     }
@@ -77,7 +76,9 @@ function Form(contextName, id, formType) {
   var loadFormValues = function() {
     var context = $('#'+domID);
     Object.keys(inheritedFormValues).forEach(function(fieldName) {
-      var target = context.find('input[name="'+fieldName+'"], textarea[name="'+fieldName+'"]');
+      var target = context.find(
+        'input[name="'+fieldName+'"], textarea[name="'+fieldName+'"], select[name="'+fieldName+'"]'
+      );
       if(target.attr('type') === 'checkbox') {
         target.prop('checked', inheritedFormValues[fieldName] === 'checked');
       } else {
@@ -85,7 +86,9 @@ function Form(contextName, id, formType) {
       }
     });
     Object.keys(formValues).forEach(function(fieldName) {
-      var target = context.find('input[name="'+fieldName+'"], textarea[name="'+fieldName+'"]');
+      var target = context.find(
+        'input[name="'+fieldName+'"], textarea[name="'+fieldName+'"], select[name="'+fieldName+'"]'
+      );
       if(target.attr('type') === 'checkbox') {
         target.prop('checked', formValues[fieldName] === 'checked');
       } else {
