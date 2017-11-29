@@ -6,18 +6,7 @@ var businessFormTemplate = $.templates('businessForm',
 "      Employer's name, address, and ZIP code" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <div class='field-subinput business-first-name'>" +
-"        <input name='business-first-name' data-propagate-to='w2'></input>" +
-"      </div>" +
-"      <div class='field-subinput business-initial'>" +
-"        <input name='business-initial' data-propagate-to='w2'></input>" +
-"      </div>" +
-"      <div class='field-subinput business-last-name'>" +
-"        <input name='business-last-name' data-propagate-to='w2'></input>" +
-"      </div>" +
-"      <div class='field-subinput business-suffix'>" +
-"        <input name='business-suffix' data-propagate-to='w2'></input>" +
-"      </div>" +
+"      <input name='business-name' data-propagate-to='w2'></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
 "      <input name='business-add1' data-propagate-to='w2'></input>" +

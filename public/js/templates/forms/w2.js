@@ -46,18 +46,7 @@ var w2FormTemplate = $.templates('w2Form',
 "      c&nbsp;&nbsp;Employer's name, address, and ZIP code" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <div class='field-subinput business-first-name'>" +
-"        <input name='business-first-name' disabled></input>" +
-"      </div>" +
-"      <div class='field-subinput business-initial'>" +
-"        <input name='business-initial' disabled></input>" +
-"      </div>" +
-"      <div class='field-subinput business-last-name'>" +
-"        <input name='business-last-name' disabled></input>" +
-"      </div>" +
-"      <div class='field-subinput business-suffix'>" +
-"        <input name='business-suffix' disabled></input>" +
-"      </div>" +
+"      <input name='business-name' disabled></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
 "      <input name='business-add1' disabled></input>" +

@@ -6,10 +6,7 @@ var formTemplates = {
 
 var inheritedFields = {
   w2: [
-    'business-first-name',
-    'business-initial',
-    'business-last-name',
-    'business-suffix',
+    'business-name',
     'business-add1',
     'business-add2',
     'business-add-city',
