@@ -6,7 +6,6 @@ TODO:
 - Improvements:
   - Features:
     - Save/load report (in localStorage)
-    - Auto-save records (timeout after field update)
     - Multiple businesses
     - More forms
     - State-specific options (start with WI and expand?)

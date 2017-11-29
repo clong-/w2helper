@@ -6,7 +6,18 @@ var businessFormTemplate = $.templates('businessForm',
 "      Employer's name, address, and ZIP code" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <input name='business-name' data-propagate-to='w2'></input>" +
+"      <div class='field-subinput business-first-name'>" +
+"        <input name='business-first-name' data-propagate-to='w2'></input>" +
+"      </div>" +
+"      <div class='field-subinput business-initial'>" +
+"        <input name='business-initial' data-propagate-to='w2'></input>" +
+"      </div>" +
+"      <div class='field-subinput business-last-name'>" +
+"        <input name='business-last-name' data-propagate-to='w2'></input>" +
+"      </div>" +
+"      <div class='field-subinput business-suffix'>" +
+"        <input name='business-suffix' data-propagate-to='w2'></input>" +
+"      </div>" +
 "    </div>" +
 "    <div class='field-input'>" +
 "      <input name='business-add1' data-propagate-to='w2'></input>" +
@@ -50,7 +61,14 @@ var businessFormTemplate = $.templates('businessForm',
 "      Kind of employer" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <input name='kind-of-employer'></input>" +
+"      <select name='kind-of-employer'>" +
+"        <option>-</option>" +
+"        <option value='F'>F - Federal govt</option>" +
+"        <option value='S'>S - State/local non-501c</option>" +
+"        <option value='T'>T - 501c non-govt</option>" +
+"        <option value='Y'>Y - State/local 501c</option>" +
+"        <option value='N'>N - None apply</option>" +
+"      </select>" +
 "    </div>" +
 "  </div>" +
 "  <div class='field full-right'>" +
@@ -58,7 +76,16 @@ var businessFormTemplate = $.templates('businessForm',
 "      Type of employees" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <input name='type-of-employees'></input>" +
+"      <select name='type-of-employees'>" +
+"        <option>-</option>" +
+"        <option value='A'>A - Agriculture</option>" +
+"        <option value='H'>H - Household</option>" +
+"        <option value='M'>M - Military</option>" +
+"        <option value='Q'>Q - Medicare Qualified</option>" +
+"        <option value='X'>X - Railroad</option>" +
+"        <option value='F'>F - Regular (form 944)</option>" +
+"        <option value='R'>R - Regular (all others)</option>" +
+"      </select>" +
 "    </div>" +
 "  </div>" +
 "  <div class='field full-right'>" +
