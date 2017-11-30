@@ -186,7 +186,23 @@ var w2FormTemplate = $.templates('w2Form',
 "        12a&nbsp;&nbsp;Code" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='def-comp-a-code'></input>" +
+"        <select name='def-comp-a-code'>" +
+"          <option>-</option>" +
+"          <option value='D'>D - Deferred to 401(k)</option>" +
+"          <option value='E'>E - Deferred to 403(b)</option>" +
+"          <option value='F'>F - Deferred to 408(k)(6)</option>" +
+"          <option value='G'>G - Deferred to 457(b)</option>" +
+"          <option value='H'>H - Deferred to 501(c)(18)(D)</option>" +
+"          <option value='W'>W - Contrib. to Health Savings</option>" +
+"          <option value='Q'>Q - Nontaxable Combat Pay</option>" +
+"          <option value='C'>C - Group Term Life >$50,000</option>" +
+"          <option value='V'>V - Nonstatutory Stock Options</option>" +
+"          <option value='Y'>Y - Deferrals under 409A</option>" +
+"          <option value='AA'>AA - Roth contrib. to 401(k)</option>" +
+"          <option value='BB'>BB - Roth contrib. to 403(b)</option>" +
+"          <option value='DD'>DD - Sponsored Health Coverage</option>" +
+"          <option value='FF'>FF - Small Employer Health Reim.</option>" +
+"        </select>" +
 "      </div>" +
 "    </div>" +
 "    <div class='subfield amount'>" +
@@ -265,7 +281,23 @@ var w2FormTemplate = $.templates('w2Form',
 "        12b&nbsp;&nbsp;Code" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='def-comp-b-code'></input>" +
+"        <select name='def-comp-b-code'>" +
+"          <option>-</option>" +
+"          <option value='D'>D - Deferred to 401(k)</option>" +
+"          <option value='E'>E - Deferred to 403(b)</option>" +
+"          <option value='F'>F - Deferred to 408(k)(6)</option>" +
+"          <option value='G'>G - Deferred to 457(b)</option>" +
+"          <option value='H'>H - Deferred to 501(c)(18)(D)</option>" +
+"          <option value='W'>W - Contrib. to Health Savings</option>" +
+"          <option value='Q'>Q - Nontaxable Combat Pay</option>" +
+"          <option value='C'>C - Group Term Life >$50,000</option>" +
+"          <option value='V'>V - Nonstatutory Stock Options</option>" +
+"          <option value='Y'>Y - Deferrals under 409A</option>" +
+"          <option value='AA'>AA - Roth contrib. to 401(k)</option>" +
+"          <option value='BB'>BB - Roth contrib. to 403(b)</option>" +
+"          <option value='DD'>DD - Sponsored Health Coverage</option>" +
+"          <option value='FF'>FF - Small Employer Health Reim.</option>" +
+"        </select>" +
 "      </div>" +
 "    </div>" +
 "    <div class='subfield amount'>" +
@@ -291,7 +323,23 @@ var w2FormTemplate = $.templates('w2Form',
 "        12c&nbsp;&nbsp;Code" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='def-comp-c-code'></input>" +
+"        <select name='def-comp-c-code'>" +
+"          <option>-</option>" +
+"          <option value='D'>D - Deferred to 401(k)</option>" +
+"          <option value='E'>E - Deferred to 403(b)</option>" +
+"          <option value='F'>F - Deferred to 408(k)(6)</option>" +
+"          <option value='G'>G - Deferred to 457(b)</option>" +
+"          <option value='H'>H - Deferred to 501(c)(18)(D)</option>" +
+"          <option value='W'>W - Contrib. to Health Savings</option>" +
+"          <option value='Q'>Q - Nontaxable Combat Pay</option>" +
+"          <option value='C'>C - Group Term Life >$50,000</option>" +
+"          <option value='V'>V - Nonstatutory Stock Options</option>" +
+"          <option value='Y'>Y - Deferrals under 409A</option>" +
+"          <option value='AA'>AA - Roth contrib. to 401(k)</option>" +
+"          <option value='BB'>BB - Roth contrib. to 403(b)</option>" +
+"          <option value='DD'>DD - Sponsored Health Coverage</option>" +
+"          <option value='FF'>FF - Small Employer Health Reim.</option>" +
+"        </select>" +
 "      </div>" +
 "    </div>" +
 "    <div class='subfield amount'>" +
@@ -309,7 +357,23 @@ var w2FormTemplate = $.templates('w2Form',
 "        12d&nbsp;&nbsp;Code" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='def-comp-d-code'></input>" +
+"        <select name='def-comp-d-code'>" +
+"          <option>-</option>" +
+"          <option value='D'>D - Deferred to 401(k)</option>" +
+"          <option value='E'>E - Deferred to 403(b)</option>" +
+"          <option value='F'>F - Deferred to 408(k)(6)</option>" +
+"          <option value='G'>G - Deferred to 457(b)</option>" +
+"          <option value='H'>H - Deferred to 501(c)(18)(D)</option>" +
+"          <option value='W'>W - Contrib. to Health Savings</option>" +
+"          <option value='Q'>Q - Nontaxable Combat Pay</option>" +
+"          <option value='C'>C - Group Term Life >$50,000</option>" +
+"          <option value='V'>V - Nonstatutory Stock Options</option>" +
+"          <option value='Y'>Y - Deferrals under 409A</option>" +
+"          <option value='AA'>AA - Roth contrib. to 401(k)</option>" +
+"          <option value='BB'>BB - Roth contrib. to 403(b)</option>" +
+"          <option value='DD'>DD - Sponsored Health Coverage</option>" +
+"          <option value='FF'>FF - Small Employer Health Reim.</option>" +
+"        </select>" +
 "      </div>" +
 "    </div>" +
 "    <div class='subfield amount'>" +
