@@ -216,7 +216,7 @@ module.exports = {
     required: false
   },
   'verification-code': {
-    content: [],
+    content: ['numeric'],
     length: {
       op: 'lteq',
       value: 20

@@ -1,3 +1,5 @@
+var Validation = require('../lib/validation')();
+
 var formTemplates = {
   report: require('../templates/forms/report'),
   business: require('../templates/forms/business'),
@@ -17,7 +19,9 @@ var inheritedFields = {
     'business-control-no',
     'business-state',
     'business-state-id'
-  ]
+  ],
+  business: [],
+  report: []
 };
 
 function Form(contextName, id, formType) {
@@ -35,6 +39,7 @@ function Form(contextName, id, formType) {
       domID: domID,
       formValues: formValues
     }));
+    populateFieldList();
     loadFormValues();
     context.on('change', 'input, textarea, select', saveFormValue);
   }
@@ -64,7 +69,11 @@ function Form(contextName, id, formType) {
     } else {
       fieldValue = event.target.value;
     }
-    formValues[fieldName] = fieldValue;
+    formValues[fieldName] = {
+      value: fieldValue,
+      valid: Validation.validateField(fieldName, fieldValue)
+    };
+    setInputValidState(event.target, formValues[fieldName].valid.passed);
     if(typeof propagateTo !== 'undefined') {
       triggerPropagation(propagateTo, fieldName, fieldValue);
     }
@@ -77,9 +86,9 @@ function Form(contextName, id, formType) {
         'input[name="'+fieldName+'"], textarea[name="'+fieldName+'"], select[name="'+fieldName+'"]'
       );
       if(target.attr('type') === 'checkbox') {
-        target.prop('checked', inheritedFormValues[fieldName] === 'checked');
+        target.prop('checked', inheritedFormValues[fieldName].value === 'checked');
       } else {
-        target.val(inheritedFormValues[fieldName]);
+        target.val(inheritedFormValues[fieldName].value);
       }
     });
     Object.keys(formValues).forEach(function(fieldName) {
@@ -87,10 +96,11 @@ function Form(contextName, id, formType) {
         'input[name="'+fieldName+'"], textarea[name="'+fieldName+'"], select[name="'+fieldName+'"]'
       );
       if(target.attr('type') === 'checkbox') {
-        target.prop('checked', formValues[fieldName] === 'checked');
+        target.prop('checked', formValues[fieldName].value === 'checked');
       } else {
-        target.val(formValues[fieldName]);
+        target.val(formValues[fieldName].value);
       }
+      setInputValidState(target, formValues[fieldName].valid.passed);
     });
   }
 
@@ -106,10 +116,19 @@ function Form(contextName, id, formType) {
   }
 
   var setField = function(fieldName, fieldValue) {
+    var basicField = {value: fieldValue, valid: {passed: true, errors: []}};
     if(inheritedFields[formType].indexOf(fieldName) >= 0) {
-      inheritedFormValues[fieldName] = fieldValue;
+      if(inheritedFormValues[fieldName]) {
+        inheritedFormValues[fieldName].value = fieldValue;
+      } else {
+        inheritedFormValues[fieldName] = basicField;
+      }
     } else {
-      formValues[fieldName] = fieldValue;
+      if(formValues[fieldName]) {
+        formValues[fieldName].value = fieldValue;
+      } else {
+        formValues[fieldName] = basicField;
+      }
     }
     updateView();
   }
@@ -122,6 +141,29 @@ function Form(contextName, id, formType) {
       map[propagateTo][field.name] = field.value;
       return map;
     }, {});
+  }
+
+  var populateFieldList = function () {
+    var fields = $(contextName).find('#'+domID).find('input, textarea, select');
+    fields.toArray().forEach(function(field) {
+      var emptyField = {value: '', valid: { passed: true, errors: [] }};
+      if(inheritedFields[formType].indexOf(field.name) >= 0) {
+        if(inheritedFormValues[field.name]) return;
+        inheritedFormValues[field.name] = emptyField;
+      } else {
+        if(formValues[field.name]) return;
+        emptyField.valid = Validation.validateField(field.name, '');
+        formValues[field.name] = emptyField;
+      }
+    });
+  }
+
+  var setInputValidState = function(target, valid) {
+    if(valid) {
+      $(target).removeClass('invalid');
+    } else {
+      $(target).addClass('invalid');
+    }
   }
 
   return {

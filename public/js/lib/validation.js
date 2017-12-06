@@ -6,6 +6,9 @@ function Validation() {
   var validateField = function(name, value) {
     var validations = ValidationsFor[name];
     var errors = [];
+    if(validations.content.indexOf('boolean') >= 0) {
+      value = (value === "checked") ? "T" : "";
+    }
     if(validations.required && value.length === 0) {
       errors.push('required');
     } else {
@@ -32,9 +35,9 @@ function Validation() {
   contentTests['alphanumeric'] = alphanumeric;
 
   var alpha = function(value) {
-    //includes letters
+    //includes letters and spaces
     //range: toUpperCase in 65-90
-    return inASCIIRange(value.toUpperCase(), 65, 90);
+    return inASCIIRange(value.toUpperCase().replace(/\ /g,''), 65, 90);
   }
   contentTests['alpha'] = alpha;
 
@@ -44,6 +47,12 @@ function Validation() {
     return inASCIIRange(value, 48, 57);
   }
   contentTests['numeric'] = numeric;
+
+  var boolean = function(value) {
+    //true or false is always valid
+    return true;
+  }
+  contentTests['boolean'] = boolean;
 
   var address = function(value) {
     //stuff from that doc linked in the doc...
