@@ -1,9 +1,9 @@
-var ValidationsFor = require('./validationMap');
+var ValidationsFor = require('./validationFieldMap');
 
 function Validation() {
   var contentTests = {};
 
-  var validateField = function(name, value) {
+  var validateField = function(name, value, dependencies) {
     var validations = ValidationsFor[name];
     var errors = [];
     if(validations.content.indexOf('boolean') >= 0) {
@@ -21,10 +21,23 @@ function Validation() {
         }
       });
     }
+    if(validations.dependencies && dependencies) {
+      var depValuesExist = validations.dependencies.map(function(name) {
+        return dependencies[name].value.length > 0;
+      });
+      if((value.length && depValuesExist.indexOf(false) >= 0) ||
+         (!value.length && depValuesExist.indexOf(true) >= 0)) {
+        errors.push('dependencies');
+      }
+    }
     return {
       passed: !errors.length,
       errors: errors
     }
+  }
+
+  var getDependencies = function(fieldName) {
+    return ValidationsFor[fieldName].dependencies || []
   }
 
   var alphanumeric = function(value) {
@@ -96,6 +109,7 @@ function Validation() {
   }
 
   var properLength = function(string, lengthObj) {
+    if(string.length === 0) return true;
     switch (lengthObj.op) {
       case 'lteq':
         return string.length <= lengthObj.value;
@@ -108,7 +122,8 @@ function Validation() {
 
 
   return {
-    validateField: validateField
+    validateField: validateField,
+    getDependencies: getDependencies
   }
 }
 

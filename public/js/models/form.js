@@ -69,11 +69,7 @@ function Form(contextName, id, formType) {
     } else {
       fieldValue = event.target.value;
     }
-    formValues[fieldName] = {
-      value: fieldValue,
-      valid: Validation.validateField(fieldName, fieldValue)
-    };
-    setInputValidState(event.target, formValues[fieldName].valid.passed);
+    runValidations(fieldName, fieldValue);
     if(typeof propagateTo !== 'undefined') {
       triggerPropagation(propagateTo, fieldName, fieldValue);
     }
@@ -100,7 +96,7 @@ function Form(contextName, id, formType) {
       } else {
         target.val(formValues[fieldName].value);
       }
-      setInputValidState(target, formValues[fieldName].valid.passed);
+      setInputValidState(fieldName, formValues[fieldName].valid.passed);
     });
   }
 
@@ -152,17 +148,43 @@ function Form(contextName, id, formType) {
         inheritedFormValues[field.name] = emptyField;
       } else {
         if(formValues[field.name]) return;
-        emptyField.valid = Validation.validateField(field.name, '');
+        emptyField.valid = Validation.validateField(field.name, '', false);
         formValues[field.name] = emptyField;
       }
     });
   }
 
-  var setInputValidState = function(target, valid) {
+  var runValidations = function(fieldName, fieldValue) {
+    var dependencyNames = Validation.getDependencies(fieldName);
+    var dependencies = dependencyNames.reduce(function(map, name) {
+      map[name] = formValues[name];
+      return map;
+    }, {});
+    var validState = Validation.validateField(fieldName, fieldValue, dependencies);
+    if(dependencyNames.length) {
+      dependencyNames.forEach(function(name) {
+        if(validState.errors.indexOf('dependencies') >= 0) {
+          formValues[name].valid.errors.push('dependencies');
+        } else {
+          formValues[name].valid.errors.splice(formValues[name].valid.errors.indexOf('dependencies'), 1);
+        }
+        formValues[name].valid.passed = !formValues[name].valid.errors.length;
+        setInputValidState(name, formValues[name].valid.passed);
+      });
+    }
+    formValues[fieldName] = {
+      value: fieldValue,
+      valid: validState
+    };
+    setInputValidState(fieldName, formValues[fieldName].valid.passed);
+  }
+
+  var setInputValidState = function(name, valid) {
+    var target = $('#'+domID).find('[name="'+name+'"]');
     if(valid) {
-      $(target).removeClass('invalid');
+      target.removeClass('invalid');
     } else {
-      $(target).addClass('invalid');
+      target.addClass('invalid');
     }
   }
 

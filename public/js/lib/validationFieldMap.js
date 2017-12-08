@@ -29,7 +29,7 @@ module.exports = {
       op: 'lteq',
       value: 5
     },
-    required: true
+    required: false
   },
   'submitter-email': {
     content: ['email'],
@@ -93,7 +93,7 @@ module.exports = {
       op: 'exactly',
       value: 4
     },
-    required: true
+    required: false
   },
   'business-ein': {
     content: ['ein'],
@@ -277,7 +277,8 @@ module.exports = {
       op: 'lteq',
       value: 2
     },
-    required: false
+    required: false,
+    dependencies: ['def-comp-a-amount']
   },
   'def-comp-a-amount': {
     content: ['numeric'],
@@ -285,7 +286,8 @@ module.exports = {
       op: 'lteq',
       value: 11
     },
-    required: false
+    required: false,
+    dependencies: ['def-comp-a-code']
   },
   'employee-add1': {
     content: ['address'],
@@ -333,7 +335,7 @@ module.exports = {
       op: 'exactly',
       value: 4
     },
-    required: true
+    required: false
   },
   'statutory-employee': {
     content: ['boolean'],
@@ -365,7 +367,8 @@ module.exports = {
       op: 'lteq',
       value: 2
     },
-    required: false
+    required: false,
+    dependencies: ['def-comp-b-amount']
   },
   'def-comp-b-amount': {
     content: ['numeric'],
@@ -373,7 +376,8 @@ module.exports = {
       op: 'lteq',
       value: 11
     },
-    required: false
+    required: false,
+    dependencies: ['def-comp-b-code']
   },
   'other': {
     content: ['alphanumeric'],
@@ -389,7 +393,8 @@ module.exports = {
       op: 'lteq',
       value: 2
     },
-    required: false
+    required: false,
+    dependencies: ['def-comp-c-amount']
   },
   'def-comp-c-amount': {
     content: ['numeric'],
@@ -397,7 +402,8 @@ module.exports = {
       op: 'lteq',
       value: 11
     },
-    required: false
+    required: false,
+    dependencies: ['def-comp-c-code']
   },
   'def-comp-d-code': {
     content: ['alpha'],
@@ -405,7 +411,8 @@ module.exports = {
       op: 'lteq',
       value: 2
     },
-    required: false
+    required: false,
+    dependencies: ['def-comp-d-amount']
   },
   'def-comp-d-amount': {
     content: ['numeric'],
@@ -413,7 +420,8 @@ module.exports = {
       op: 'lteq',
       value: 11
     },
-    required: false
+    required: false,
+    dependencies: ['def-comp-d-code']
   },
   'state-wages-tips': {
     content: ['numeric'],
