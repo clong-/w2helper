@@ -1,6 +1,6 @@
 TODO:
 - MVP:
-  - Field validation
+  - User Helps
   - File export (Blob+FileSaver?)
   - Good styling
 - Improvements:
@@ -8,10 +8,9 @@ TODO:
     - Save/load report (in localStorage)
     - Multiple businesses
     - More forms
-    - State-specific options (start with WI and expand?)
+    - State-specific options
     - Import from file
   - Frontend:
-    - Info modals/popovers for fields
     - Readme
     - Disclaimer
     - License?
