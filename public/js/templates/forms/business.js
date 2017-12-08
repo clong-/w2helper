@@ -51,7 +51,7 @@ var businessFormTemplate = $.templates('businessForm',
 "    </label>" +
 "    <div class='field-input'>" +
 "      <select name='kind-of-employer'>" +
-"        <option>-</option>" +
+"        <option value=''></option>" +
 "        <option value='F'>F - Federal govt</option>" +
 "        <option value='S'>S - State/local non-501c</option>" +
 "        <option value='T'>T - 501c non-govt</option>" +
@@ -66,7 +66,7 @@ var businessFormTemplate = $.templates('businessForm',
 "    </label>" +
 "    <div class='field-input'>" +
 "      <select name='type-of-employees'>" +
-"        <option>-</option>" +
+"        <option value=''></option>" +
 "        <option value='A'>A - Agriculture</option>" +
 "        <option value='H'>H - Household</option>" +
 "        <option value='M'>M - Military</option>" +

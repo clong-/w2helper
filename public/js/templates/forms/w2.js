@@ -187,7 +187,7 @@ var w2FormTemplate = $.templates('w2Form',
 "      </label>" +
 "      <div class='field-input'>" +
 "        <select name='def-comp-a-code'>" +
-"          <option>-</option>" +
+"          <option value=''></option>" +
 "          <option value='D'>D - Deferred to 401(k)</option>" +
 "          <option value='E'>E - Deferred to 403(b)</option>" +
 "          <option value='F'>F - Deferred to 408(k)(6)</option>" +
@@ -282,7 +282,7 @@ var w2FormTemplate = $.templates('w2Form',
 "      </label>" +
 "      <div class='field-input'>" +
 "        <select name='def-comp-b-code'>" +
-"          <option>-</option>" +
+"          <option value=''></option>" +
 "          <option value='D'>D - Deferred to 401(k)</option>" +
 "          <option value='E'>E - Deferred to 403(b)</option>" +
 "          <option value='F'>F - Deferred to 408(k)(6)</option>" +
@@ -324,7 +324,7 @@ var w2FormTemplate = $.templates('w2Form',
 "      </label>" +
 "      <div class='field-input'>" +
 "        <select name='def-comp-c-code'>" +
-"          <option>-</option>" +
+"          <option value=''></option>" +
 "          <option value='D'>D - Deferred to 401(k)</option>" +
 "          <option value='E'>E - Deferred to 403(b)</option>" +
 "          <option value='F'>F - Deferred to 408(k)(6)</option>" +
@@ -358,7 +358,7 @@ var w2FormTemplate = $.templates('w2Form',
 "      </label>" +
 "      <div class='field-input'>" +
 "        <select name='def-comp-d-code'>" +
-"          <option>-</option>" +
+"          <option value=''></option>" +
 "          <option value='D'>D - Deferred to 401(k)</option>" +
 "          <option value='E'>E - Deferred to 403(b)</option>" +
 "          <option value='F'>F - Deferred to 408(k)(6)</option>" +
