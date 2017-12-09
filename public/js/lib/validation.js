@@ -1,4 +1,4 @@
-var ValidationsFor = require('./validationFieldMap');
+var ValidationsFor = require('./fieldValidationMap');
 
 function Validation() {
   var contentTests = {};
