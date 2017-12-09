@@ -37,7 +37,7 @@ module.exports = {
   },
   'dependencies': {
     name: 'dependencies',
-    value: 'If filled, these fields must also be filled: {{:dependencies}}'
+    value: 'If filled, these fields must also be filled (and vice versa): <b>{{:dependencies}}</b>'
   },
   'lteq': {
     name: 'lteq',

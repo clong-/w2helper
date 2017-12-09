@@ -13,11 +13,20 @@ var Description = function() {
   var forValidation = function(name, data) {
     var data = data || {};
     var description = ValidationDescriptions[name];
-    var describedData = Object.keys(data).reduce(function(map, key) {
-      var vd = ValidationDescriptions[data[key]];
-      map[key] = vd ? vd.value : data[key];
-      return map;
-    }, {});
+    var describedData = {}
+    if(name === 'dependencies') {
+      describedData = {
+        dependencies: data.map(function(fieldName) {
+          return FieldDescriptions[fieldName].name
+        }).join(', ')
+      }
+    } else {
+      describedData = Object.keys(data).reduce(function(map, key) {
+        var vd = ValidationDescriptions[data[key]];
+        map[key] = vd ? vd.value : data[key];
+        return map;
+      }, {});
+    }
     return {
       name: description.name,
       description: $.templates(description.value).render(describedData)
