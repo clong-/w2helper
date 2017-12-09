@@ -41,10 +41,11 @@ function Form(contextName, id, formType) {
     }));
     populateFieldList();
     loadFormValues();
-    context.on('change', 'input, textarea, select', saveFormValue);
+    context.on('change', 'select', saveFormValue);
+    context.on('keyup', 'input, textarea', saveFormValue);
     context.on('focus', 'input, textarea, select', function(event) {
       $(event.target).trigger('updateHelpInfo', formValues[event.target.name]);
-    })
+    });
   }
 
   var updateView = function() {
@@ -73,6 +74,7 @@ function Form(contextName, id, formType) {
       fieldValue = event.target.value;
     }
     runValidations(fieldName, fieldValue);
+    $(event.target).trigger('updateHelpInfo', formValues[event.target.name]);
     if(typeof propagateTo !== 'undefined') {
       triggerPropagation(propagateTo, fieldName, fieldValue);
     }
