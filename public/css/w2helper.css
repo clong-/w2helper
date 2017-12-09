@@ -356,6 +356,11 @@ textarea {
   color: #F99;
 }
 
+.invalid {
+  border-color: #FBB;
+  background-color: #FEE;
+}
+
 #printout {
   margin: 30px;
   font-family: courier;

@@ -6,18 +6,7 @@ var businessFormTemplate = $.templates('businessForm',
 "      Employer's name, address, and ZIP code" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <div class='field-subinput business-first-name'>" +
-"        <input name='business-first-name' data-propagate-to='w2'></input>" +
-"      </div>" +
-"      <div class='field-subinput business-initial'>" +
-"        <input name='business-initial' data-propagate-to='w2'></input>" +
-"      </div>" +
-"      <div class='field-subinput business-last-name'>" +
-"        <input name='business-last-name' data-propagate-to='w2'></input>" +
-"      </div>" +
-"      <div class='field-subinput business-suffix'>" +
-"        <input name='business-suffix' data-propagate-to='w2'></input>" +
-"      </div>" +
+"      <input name='business-name' data-propagate-to='w2'></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
 "      <input name='business-add1' data-propagate-to='w2'></input>" +
@@ -62,7 +51,7 @@ var businessFormTemplate = $.templates('businessForm',
 "    </label>" +
 "    <div class='field-input'>" +
 "      <select name='kind-of-employer'>" +
-"        <option>-</option>" +
+"        <option value=''></option>" +
 "        <option value='F'>F - Federal govt</option>" +
 "        <option value='S'>S - State/local non-501c</option>" +
 "        <option value='T'>T - 501c non-govt</option>" +
@@ -77,7 +66,7 @@ var businessFormTemplate = $.templates('businessForm',
 "    </label>" +
 "    <div class='field-input'>" +
 "      <select name='type-of-employees'>" +
-"        <option>-</option>" +
+"        <option value=''></option>" +
 "        <option value='A'>A - Agriculture</option>" +
 "        <option value='H'>H - Household</option>" +
 "        <option value='M'>M - Military</option>" +
