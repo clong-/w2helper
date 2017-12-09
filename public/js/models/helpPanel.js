@@ -1,5 +1,5 @@
 var ValidationsFor = require('../lib/fieldValidationMap');
-//var NameToWords = require('../lib/nameToWordsMap');
+var Description = require('../lib/description')();
 
 var HelpPanel = function(contextName, id) {
   //set rendering-related variables
@@ -37,28 +37,27 @@ var HelpPanel = function(contextName, id) {
   }
 
   var updateHelpInfo = function(event, fieldData) {
-    //set header with field name
-    helpInfo.header = "Help for "+event.target.name+":"
+    var validations = ValidationsFor[event.target.name];
+    var fieldDescription = Description.forField(event.target.name);
 
-    //set body with field description
-    helpInfo.body = "This field is called "+event.target.name+". You should enter the "+event.target.name+" here.";
+    helpInfo.header = fieldDescription.name
+    helpInfo.body = fieldDescription.description
 
     //set validations
     // if required, list it
     // list each content requirement
     // list length requirements
-    var validations = ValidationsFor[event.target.name];
     var validationList = [];
     if(validations.required) validationList.push('required');
     validations.content.forEach(function(name) {
-      validationList.push(name);
+      if(name !== 'boolean') validationList.push(name);
     });
-    validationList.push('length');
+    if(validations.content.indexOf('boolean') < 0) validationList.push('length');
     if(validations.dependencies) validationList.push('dependencies');
 
     helpInfo.validations = validationList.map(function(name) {
       return {
-        text: name,
+        text: Description.forValidation(name, validations[name]).description,
         state: fieldData.valid.errors.indexOf(name) >= 0 ? 'invalid' : 'valid'
       }
     });
