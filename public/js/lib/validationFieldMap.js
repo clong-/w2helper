@@ -96,7 +96,7 @@ module.exports = {
     required: false
   },
   'business-ein': {
-    content: ['ein'],
+    content: ['ein','numeric'],
     length: {
       op: 'exactly',
       value: 9
@@ -144,7 +144,7 @@ module.exports = {
     required: true
   },
   'ssn': {
-    content: ['ssn'],
+    content: ['ssn', 'numeric'],
     length: {
       op: 'exactly',
       value: 9

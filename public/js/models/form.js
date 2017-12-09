@@ -42,6 +42,9 @@ function Form(contextName, id, formType) {
     populateFieldList();
     loadFormValues();
     context.on('change', 'input, textarea, select', saveFormValue);
+    context.on('focus', 'input, textarea, select', function(event) {
+      $(event.target).trigger('updateHelpInfo', formValues[event.target.name]);
+    })
   }
 
   var updateView = function() {
