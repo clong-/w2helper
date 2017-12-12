@@ -1,5 +1,6 @@
 var Report = require('./models/report');
 var HelpPanel = require('./models/helpPanel');
+var FileModal = require('./models/fileModal');
 
 $(document).ready(function() {
   initialize();
@@ -12,11 +13,13 @@ EMPLOYEEFIELDS = ['employee-firstname', 'employee-lastname', 'employee-SSN', 'em
 var nextReportID = 0;
 
 function initialize() {
-  var appContext = "main";
+  var appContext = 'main';
   var currentReport = Report(appContext, 'report-'+nextReportID);
   var helpPanel = HelpPanel(appContext, 'help-panel');
+  var fileModal = FileModal(appContext, 'file-modal');
   $.views.settings.allowCode(true);
   currentReport.render();
   helpPanel.render();
+  fileModal.render(); //hidden by default
   nextReportID += 1;
 }
