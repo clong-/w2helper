@@ -1,4 +1,4 @@
-var ValidationsFor = require('./validationFieldMap');
+var ValidationsFor = require('./fieldValidationMap');
 
 function Validation() {
   var contentTests = {};
@@ -41,7 +41,7 @@ function Validation() {
   }
 
   var alphanumeric = function(value) {
-    //includes letters, numbers, punctuation
+    //includes letters, numbers, spaces, punctuation
     //range: 32-126
     return inASCIIRange(value, 32, 126);
   }
@@ -75,12 +75,11 @@ function Validation() {
   contentTests['address'] = address;
 
   var ein = function(value) {
-    //numeric
     //not begin with 00, 07, 08, 09, 17, 18, 19, 28, 29, 49, 69, 70, 78, 79 or 89
     var badStarts = ['00', '07', '08', '09', '17',
                      '18', '19', '28', '29', '49',
                      '69', '70', '78', '79', '89'];
-    return numeric(value) && (badStarts.indexOf(value.substring(0,2)) < 0);
+    return badStarts.indexOf(value.substring(0,2)) < 0;
   }
   contentTests['ein'] = ein;
 
@@ -96,7 +95,7 @@ function Validation() {
   var ssn = function(value) {
     //numeric
     //not begin with 666 or 9
-    return numeric(value) && (!value.startsWith('666') && !value.startsWith('9'));
+    return !value.startsWith('666') && !value.startsWith('9');
   }
   contentTests['ssn'] = ssn;
 

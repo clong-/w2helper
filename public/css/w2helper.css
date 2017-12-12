@@ -49,6 +49,8 @@ textarea {
 }
 
 .box {
+  display: inline-block;
+  float: left;
   border: 2px solid black;
   border-radius: 10px;
   padding: 0px 10px 0px 10px;
@@ -359,6 +361,24 @@ textarea {
 .invalid {
   border-color: #FBB;
   background-color: #FEE;
+}
+
+.help-panel {
+  margin-left: 15px;
+  position: fixed;
+  width: 300px;
+}
+
+.help-body p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-indent: 15px;
+}
+
+.help-validations .invalid {
+  font-weight: bold;
+  background-color: transparent;
+  color: red;
 }
 
 #printout {

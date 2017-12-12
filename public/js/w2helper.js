@@ -1,4 +1,5 @@
 var Report = require('./models/report');
+var HelpPanel = require('./models/helpPanel');
 
 $(document).ready(function() {
   initialize();
@@ -11,9 +12,11 @@ EMPLOYEEFIELDS = ['employee-firstname', 'employee-lastname', 'employee-SSN', 'em
 var nextReportID = 0;
 
 function initialize() {
-  var reportContext = "main";
-  var currentReport = Report(reportContext, 'report-'+nextReportID);
+  var appContext = "main";
+  var currentReport = Report(appContext, 'report-'+nextReportID);
+  var helpPanel = HelpPanel(appContext, 'help-panel');
   $.views.settings.allowCode(true);
   currentReport.render();
+  helpPanel.render();
   nextReportID += 1;
 }
