@@ -148,10 +148,10 @@ var w2FormTemplate = $.templates('w2Form',
 "      </label>" +
 "      <div class='field-input'>" +
 "        <div class='field-subinput first-name'>" +
-"          <input name='employee-first-name'></input>" +
+"          <input name='employee-first-name' placeholder='First name'></input>" +
 "        </div>" +
 "        <div class='field-subinput initial'>" +
-"          <input name='employee-initial'></input>" +
+"          <input name='employee-initial' placeholder='MI'></input>" +
 "        </div>" +
 "      </div>" +
 "    </div>" +
@@ -223,7 +223,7 @@ var w2FormTemplate = $.templates('w2Form',
 "        Amount" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='def-comp-a-amount'></input>" +
+"        <input name='def-comp-a-amount' placeholder='for 12a'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +
@@ -234,23 +234,23 @@ var w2FormTemplate = $.templates('w2Form',
 "      </label>" +
 "    </div>" +
 "    <div class='field-input'>" +
-"      <input name='employee-add1'></input>" +
+"      <input name='employee-add1' placeholder='Address line 1'></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
-"      <input name='employee-add2'></input>" +
+"      <input name='employee-add2' placeholder='Address line 2'></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
 "      <div class='field-subinput city'>" +
-"        <input name='employee-city'></input>" +
+"        <input name='employee-city' placeholder='City'></input>" +
 "      </div>" +
 "      <div class='field-subinput state'>" +
-"        <input name='employee-state'></input>" +
+"        <input name='employee-state' placeholder='State'></input>" +
 "      </div>" +
 "      <div class='field-subinput zip'>" +
-"        <input name='employee-zip'></input>" +
+"        <input name='employee-zip' placeholder='ZIP'></input>" +
 "      </div>" +
 "      <div class='field-subinput zip-ext'>" +
-"        <input name='employee-zip-ext'></input>" +
+"        <input name='employee-zip-ext' placeholder='+4 ext'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +
@@ -331,7 +331,7 @@ var w2FormTemplate = $.templates('w2Form',
 "        Amount" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='def-comp-b-amount'></input>" +
+"        <input name='def-comp-b-amount' placeholder='for 12b'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +
@@ -386,7 +386,7 @@ var w2FormTemplate = $.templates('w2Form',
 "        Amount" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='def-comp-c-amount'></input>" +
+"        <input name='def-comp-c-amount' placeholder='for 12c'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +
@@ -433,7 +433,7 @@ var w2FormTemplate = $.templates('w2Form',
 "        Amount" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='def-comp-d-amount'></input>" +
+"        <input name='def-comp-d-amount' placeholder='for 12d'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +
