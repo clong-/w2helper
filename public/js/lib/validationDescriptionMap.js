@@ -1,19 +1,19 @@
 module.exports = {
   'alphanumeric': {
     name: 'alphanumeric',
-    value: 'Must contain only <a href="https://www.asciitable.com" target="_blank">ASCII</a> letters, numbers, spaces, and symbols (characters 32-126).'
+    value: 'Must contain only <a href="http://www.asciitable.com" target="_blank">ASCII</a> letters, numbers, spaces, and symbols (characters 32-126).'
   },
   'alpha': {
     name: 'alpha',
-    value: 'Must contain only <a href="https://www.asciitable.com" target="_blank">ASCII</a> letters and spaces.'
+    value: 'Must contain only <a href="http://www.asciitable.com" target="_blank">ASCII</a> letters and spaces.'
   },
   'numeric': {
     name: 'numeric',
-    value: 'Must contain only <a href="https://www.asciitable.com" target="_blank">ASCII</a> numbers.'
+    value: 'Must contain only <a href="http://www.asciitable.com" target="_blank">ASCII</a> numbers.'
   },
   'address': {
     name: 'address',
-    value: 'Must contain only <a href="https://www.asciitable.com" target="_blank">ASCII</a> letters, numbers, spaces, and symbols (characters 32-126).'
+    value: 'Must contain only <a href="http://www.asciitable.com" target="_blank">ASCII</a> letters, numbers, spaces, and symbols (characters 32-126).'
   },
   'ein': {
     name: 'ein',
