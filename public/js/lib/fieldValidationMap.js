@@ -61,7 +61,7 @@ module.exports = {
       op: 'lteq',
       value: 22
     },
-    required: true
+    required: false
   },
   'business-add-city': {
     content: ['alpha'],
@@ -173,7 +173,7 @@ module.exports = {
       op: 'lteq',
       value: 11
     },
-    required: true
+    required: false
   },
   'ss-tax': {
     content: ['numeric'],
@@ -245,7 +245,7 @@ module.exports = {
       op: 'lteq',
       value: 15
     },
-    required: true
+    required: false
   },
   'employee-last-name': {
     content: ['alpha'],
@@ -261,7 +261,7 @@ module.exports = {
       op: 'lteq',
       value: 4
     },
-    required: true
+    required: false
   },
   'nonqualified-plans': {
     content: ['numeric'],
@@ -303,7 +303,7 @@ module.exports = {
       op: 'lteq',
       value: 22
     },
-    required: true
+    required: false
   },
   'employee-city': {
     content: ['alpha'],
