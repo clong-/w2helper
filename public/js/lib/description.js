@@ -1,5 +1,5 @@
-var FieldDescriptions = require('./fieldDescriptionMap');
-var ValidationDescriptions = require('./validationDescriptionMap');
+var FieldDescriptions = require('./dataMaps/fieldDescriptionMap');
+var ValidationDescriptions = require('./dataMaps/validationDescriptionMap');
 
 var Description = function() {
   var forField = function(name) {

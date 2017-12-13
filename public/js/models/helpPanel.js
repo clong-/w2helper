@@ -1,4 +1,4 @@
-var ValidationsFor = require('../lib/fieldValidationMap');
+var ValidationsFor = require('../lib/dataMaps/fieldValidationMap');
 var Description = require('../lib/description')();
 
 var HelpPanel = function(contextName, id) {
