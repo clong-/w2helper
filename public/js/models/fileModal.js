@@ -1,3 +1,6 @@
+var FileBuilder = require('../lib/fileBuilder');
+var FileSaver = require('../vendor/FileSaver');
+
 var FileModal = function(contextName, id) {
   //ser rendering-related variables
   var contextName = contextName;
@@ -37,10 +40,10 @@ var FileModal = function(contextName, id) {
     //not used yet
   }
 
-  var doModal = function(event, data) {
+  var doModal = function(event, fileData) {
     visible = true;
     state = 'start';
-    data = data;
+    data = fileData;
     updateView();
   }
 
@@ -75,13 +78,11 @@ var FileModal = function(contextName, id) {
     setTimeout(function() {
       $(contextName).trigger('generationDone', true);
     }, 3000);
-    console.log('[mock generation]')
-    //set the file variable to the generated blob
+    file = FileBuilder('efw2',data).build();
   }
 
   var downloadFile = function() {
-    //download the damn thing
-    console.log('[mock download]');
+    FileSaver.saveAs(file, 'efw2.txt');
   }
 
   return {
