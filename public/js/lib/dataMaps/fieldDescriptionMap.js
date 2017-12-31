@@ -135,6 +135,10 @@ module.exports = {
     name: 'Non-qualified Plans',
     value: 'Enter the amount of non-qualified deferred compensation distributed from employer.'
   },
+  'section-457': {
+    name: 'Non-qualified Plans: Section 457',
+    value: 'Check this box if the non-qualified deferred compensation listed in the previous field is under Section 457. Leave unchecked if it is not.'
+  },
   'def-comp-a-code': {
     name: 'Deferred Compensation Code (Box A)',
     value: 'Select the appropriate code for the type of compensation and/or benefits from the dropdown. <b>Don\'t worry if you don\'t see an option you were provided!</b> If it\'s not in this list, it\'s not required for filing your EFW2.'

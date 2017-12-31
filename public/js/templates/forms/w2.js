@@ -173,11 +173,21 @@ var w2FormTemplate = $.templates('w2Form',
 "    </div>" +
 "  </div>" +
 "  <div class='field mid-right'>" +
-"    <label>" +
-"      11&nbsp;&nbsp;Non-qualified plans" +
-"    </label>" +
-"    <div class='field-input'>" +
-"      <input name='nonqualified-plans'></input>" +
+"    <div class='subfield nonqual-amount'>" +
+"      <label>" +
+"        11&nbsp;&nbsp;Non-qualified plans" +
+"      </label>" +
+"      <div class='field-input'>" +
+"        <input name='nonqualified-plans'></input>" +
+"      </div>" +
+"    </div>" +
+"    <div class='subfield small-label nonqual-bool'>" +
+"      <label>" +
+"        Sec. 457" +
+"      </label>" +
+"      <div class='field-input checkbox'>" +
+"        <input type='checkbox' name='section-457'></input>" +
+"      </div>" +
 "    </div>" +
 "  </div>" +
 "  <div class='field mid-right'>" +

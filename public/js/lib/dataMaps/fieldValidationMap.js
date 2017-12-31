@@ -3,7 +3,7 @@ module.exports = {
     content: ['alpha'],
     length: {
       op: 'lteq',
-      value: 57
+      value: 27
     },
     required: true
   },
@@ -268,6 +268,14 @@ module.exports = {
     length: {
       op: 'lteq',
       value: 11
+    },
+    required: false
+  },
+  'section-457': {
+    content: ['boolean'],
+    length: {
+      op: 'exactly',
+      value: 1
     },
     required: false
   },

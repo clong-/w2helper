@@ -268,16 +268,36 @@ textarea {
   border-left: 1px dashed black;
 }
 
+.subfield.nonqual-amount {
+  width: 81%;
+  float: left;
+  border-right: 1px dashed black;
+  height: 100%;
+}
+
+.subfield.nonqual-bool {
+  width: 19%;
+  float: left;
+  border-left: 1px dashed black;
+  height: 100%;
+}
+
+.nonqual-bool input[type=checkbox] {
+  margin: 5px 0 0 7px !important;
+}
+
 .subfield.code {
   width: 29%;
   float: left;
   border-right: 1px dashed black;
+  height: 100%;
 }
 
 .subfield.amount {
   width: 70%;
   float: left;
   border-left: 1px dashed black;
+  height: 100%;
 }
 
 .subfield.statutory-employee {
