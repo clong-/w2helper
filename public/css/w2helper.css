@@ -185,7 +185,7 @@ textarea {
   box-sizing: border-box;
   width: 100%;
   outline-width: 1px;
-  padding: 0;
+  padding: 0 0 0 5px;
 }
 
 .field-subinput.city {
@@ -379,6 +379,15 @@ textarea {
   font-weight: bold;
   background-color: transparent;
   color: red;
+}
+
+input::placeholder {
+  font-size: 8pt;
+  color: #BBB;
+}
+
+input:focus::placeholder {
+  color: transparent;
 }
 
 #printout {

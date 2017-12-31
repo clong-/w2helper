@@ -6,26 +6,26 @@ var businessFormTemplate = $.templates('businessForm',
 "      Employer's name, address, and ZIP code" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <input name='business-name' data-propagate-to='w2'></input>" +
+"      <input name='business-name' data-propagate-to='w2' placeholder='Name'></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
-"      <input name='business-add1' data-propagate-to='w2'></input>" +
+"      <input name='business-add1' data-propagate-to='w2' placeholder='Address line 1'></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
-"      <input name='business-add2' data-propagate-to='w2'></input>" +
+"      <input name='business-add2' data-propagate-to='w2' placeholder='Address line 2'></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
 "      <div class='field-subinput city'>" +
-"        <input name='business-add-city' data-propagate-to='w2'></input>" +
+"        <input name='business-add-city' data-propagate-to='w2' placeholder='City'></input>" +
 "      </div>" +
 "      <div class='field-subinput state'>" +
-"        <input name='business-add-state' data-propagate-to='w2'></input>" +
+"        <input name='business-add-state' data-propagate-to='w2' placeholder='State'></input>" +
 "      </div>" +
 "      <div class='field-subinput zip'>" +
-"        <input name='business-add-zip' data-propagate-to='w2'></input>" +
+"        <input name='business-add-zip' data-propagate-to='w2' placeholder='ZIP'></input>" +
 "      </div>" +
 "      <div class='field-subinput zip-ext'>" +
-"        <input name='business-add-zip-ext' data-propagate-to='w2'></input>" +
+"        <input name='business-add-zip-ext' data-propagate-to='w2' placeholder='+4 ext'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +

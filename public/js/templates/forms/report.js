@@ -14,7 +14,11 @@ var reportFormTemplate = $.templates('reportForm',
 "      Tax year" +
 "    </label>" +
 "    <div class='field-input'>" +
-"      <input name='tax-year'></input>" +
+"      <select name='tax-year'>" +
+"        <option value=''></option>" +
+"        <option value='2016'>2016</option>" +
+"        <option value='2017'>2017</option>" +
+"      </select>" +
 "    </div>" +
 "  </div>" +
 "  <div class='field halfsies'>" +

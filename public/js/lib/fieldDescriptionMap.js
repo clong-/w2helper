@@ -137,7 +137,7 @@ module.exports = {
   },
   'def-comp-a-code': {
     name: 'Deferred Compensation Code (Box A)',
-    value: 'Select the appropriate code for the type of compensation and/or benefits from the dropdown.'
+    value: 'Select the appropriate code for the type of compensation and/or benefits from the dropdown. <b>Don\'t worry if you don\'t see an option you were provided!</b> If it\'s not in this list, it\'s not required for filing your EFW2.'
   },
   'def-comp-a-amount': {
     name: 'Deferred Compensation Amount (Box A)',
@@ -181,7 +181,7 @@ module.exports = {
   },
   'def-comp-b-code': {
     name: 'Deferred Compensation Code (Box B)',
-    value: 'Select the appropriate code for the type of compensation and/or benefits from the dropdown.'
+    value: 'Select the appropriate code for the type of compensation and/or benefits from the dropdown. <b>Don\'t worry if you don\'t see an option you were provided!</b> If it\'s not in this list, it\'s not required for filing your EFW2.'
   },
   'def-comp-b-amount': {
     name: 'Deferred Compensation Amount (Box B)',
@@ -193,7 +193,7 @@ module.exports = {
   },
   'def-comp-c-code': {
     name: 'Deferred Compensation Code (Box C)',
-    value: 'Select the appropriate code for the type of compensation and/or benefits from the dropdown.'
+    value: 'Select the appropriate code for the type of compensation and/or benefits from the dropdown. <b>Don\'t worry if you don\'t see an option you were provided!</b> If it\'s not in this list, it\'s not required for filing your EFW2.'
   },
   'def-comp-c-amount': {
     name: 'Deferred Compensation Amount (Box C)',
@@ -201,7 +201,7 @@ module.exports = {
   },
   'def-comp-d-code': {
     name: 'Deferred Compensation Code (Box D)',
-    value: 'Select the appropriate code for the type of compensation and/or benefits from the dropdown.'
+    value: 'Select the appropriate code for the type of compensation and/or benefits from the dropdown. <b>Don\'t worry if you don\'t see an option you were provided!</b> If it\'s not in this list, it\'s not required for filing your EFW2.'
   },
   'def-comp-d-amount': {
     name: 'Deferred Compensation Amount (Box D)',

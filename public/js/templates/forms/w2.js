@@ -148,10 +148,10 @@ var w2FormTemplate = $.templates('w2Form',
 "      </label>" +
 "      <div class='field-input'>" +
 "        <div class='field-subinput first-name'>" +
-"          <input name='employee-first-name'></input>" +
+"          <input name='employee-first-name' placeholder='First name'></input>" +
 "        </div>" +
 "        <div class='field-subinput initial'>" +
-"          <input name='employee-initial'></input>" +
+"          <input name='employee-initial' placeholder='MI'></input>" +
 "        </div>" +
 "      </div>" +
 "    </div>" +
@@ -188,20 +188,34 @@ var w2FormTemplate = $.templates('w2Form',
 "      <div class='field-input'>" +
 "        <select name='def-comp-a-code'>" +
 "          <option value=''></option>" +
-"          <option value='D'>D - Deferred to 401(k)</option>" +
-"          <option value='E'>E - Deferred to 403(b)</option>" +
-"          <option value='F'>F - Deferred to 408(k)(6)</option>" +
-"          <option value='G'>G - Deferred to 457(b)</option>" +
-"          <option value='H'>H - Deferred to 501(c)(18)(D)</option>" +
-"          <option value='W'>W - Contrib. to Health Savings</option>" +
-"          <option value='Q'>Q - Nontaxable Combat Pay</option>" +
-"          <option value='C'>C - Group Term Life >$50,000</option>" +
-"          <option value='V'>V - Nonstatutory Stock Options</option>" +
-"          <option value='Y'>Y - Deferrals under 409A</option>" +
-"          <option value='AA'>AA - Roth contrib. to 401(k)</option>" +
-"          <option value='BB'>BB - Roth contrib. to 403(b)</option>" +
-"          <option value='DD'>DD - Sponsored Health Coverage</option>" +
-"          <option value='FF'>FF - Small Employer Health Reim.</option>" +
+//"          <option value='A'>A - Uncollected SS or RRTA tax on tips</option>" +
+//"          <option value='B'>B - Uncollected Medicare tax on tips</option>" +
+"          <option value='C'>C - Taxable group-term life >$50,000</option>" +
+"          <option value='D'>D - Elective deferrals to 401(k)</option>" +
+"          <option value='E'>E - Elective deferrals to 403(b)</option>" +
+"          <option value='F'>F - Elective deferrals to 408(k)(6)</option>" +
+"          <option value='G'>G - Elective deferrals to 457(b)</option>" +
+"          <option value='H'>H - Elective deferrals to 501(c)(18)(D)</option>" +
+//"          <option value='J'>J - Nontaxable sick pay</option>" +
+//"          <option value='K'>K - Excess golden parachute excise tax</option>" +
+//"          <option value='L'>L - Business expense reimbursements</option>" +
+//"          <option value='M'>M - SS or RRTA tax on group-term life</option>" +
+//"          <option value='N'>N - Medicare tax on group-term life</option>" +
+//"          <option value='P'>P - Moving expense reimbursements</option>" +
+"          <option value='Q'>Q - Nontaxable combat pay</option>" +
+//"          <option value='R'>R - Contrib. to Archer medical savings</option>" +
+//"          <option value='S'>S - Salary reduction contrib. to 408(p)</option>" +
+//"          <option value='T'>T - Adoption benefits</option>" +
+"          <option value='V'>V - Income from nonstat. stock options</option>" +
+"          <option value='W'>W - Contrib. to health savings account</option>" +
+"          <option value='Y'>Y - Deferrals to 409A nonqualified</option>" +
+//"          <option value='Z'>Z - Income under 409A nonqualified</option>" +
+"          <option value='AA'>AA - Roth contributions to 401(k)</option>" +
+"          <option value='BB'>BB - Roth contributions to 403(b)</option>" +
+//"          <option value='CC'>CC - For employer use only</option>" +
+"          <option value='DD'>DD - Employer-sponsored health coverage</option>" +
+//"          <option value='EE'>EE - Roth contributions to 457(b)</option>" +
+"          <option value='FF'>FF - Small employer health reimbursement</option>" +
 "        </select>" +
 "      </div>" +
 "    </div>" +
@@ -210,7 +224,7 @@ var w2FormTemplate = $.templates('w2Form',
 "        Amount" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='def-comp-a-amount'></input>" +
+"        <input name='def-comp-a-amount' placeholder='for 12a'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +
@@ -221,23 +235,23 @@ var w2FormTemplate = $.templates('w2Form',
 "      </label>" +
 "    </div>" +
 "    <div class='field-input'>" +
-"      <input name='employee-add1'></input>" +
+"      <input name='employee-add1' placeholder='Address line 1'></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
-"      <input name='employee-add2'></input>" +
+"      <input name='employee-add2' placeholder='Address line 2'></input>" +
 "    </div>" +
 "    <div class='field-input'>" +
 "      <div class='field-subinput city'>" +
-"        <input name='employee-city'></input>" +
+"        <input name='employee-city' placeholder='City'></input>" +
 "      </div>" +
 "      <div class='field-subinput state'>" +
-"        <input name='employee-state'></input>" +
+"        <input name='employee-state' placeholder='State'></input>" +
 "      </div>" +
 "      <div class='field-subinput zip'>" +
-"        <input name='employee-zip'></input>" +
+"        <input name='employee-zip' placeholder='ZIP'></input>" +
 "      </div>" +
 "      <div class='field-subinput zip-ext'>" +
-"        <input name='employee-zip-ext'></input>" +
+"        <input name='employee-zip-ext' placeholder='+4 ext'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +
@@ -283,20 +297,34 @@ var w2FormTemplate = $.templates('w2Form',
 "      <div class='field-input'>" +
 "        <select name='def-comp-b-code'>" +
 "          <option value=''></option>" +
-"          <option value='D'>D - Deferred to 401(k)</option>" +
-"          <option value='E'>E - Deferred to 403(b)</option>" +
-"          <option value='F'>F - Deferred to 408(k)(6)</option>" +
-"          <option value='G'>G - Deferred to 457(b)</option>" +
-"          <option value='H'>H - Deferred to 501(c)(18)(D)</option>" +
-"          <option value='W'>W - Contrib. to Health Savings</option>" +
-"          <option value='Q'>Q - Nontaxable Combat Pay</option>" +
-"          <option value='C'>C - Group Term Life >$50,000</option>" +
-"          <option value='V'>V - Nonstatutory Stock Options</option>" +
-"          <option value='Y'>Y - Deferrals under 409A</option>" +
-"          <option value='AA'>AA - Roth contrib. to 401(k)</option>" +
-"          <option value='BB'>BB - Roth contrib. to 403(b)</option>" +
-"          <option value='DD'>DD - Sponsored Health Coverage</option>" +
-"          <option value='FF'>FF - Small Employer Health Reim.</option>" +
+//"          <option value='A'>A - Uncollected SS or RRTA tax on tips</option>" +
+//"          <option value='B'>B - Uncollected Medicare tax on tips</option>" +
+"          <option value='C'>C - Taxable group-term life >$50,000</option>" +
+"          <option value='D'>D - Elective deferrals to 401(k)</option>" +
+"          <option value='E'>E - Elective deferrals to 403(b)</option>" +
+"          <option value='F'>F - Elective deferrals to 408(k)(6)</option>" +
+"          <option value='G'>G - Elective deferrals to 457(b)</option>" +
+"          <option value='H'>H - Elective deferrals to 501(c)(18)(D)</option>" +
+//"          <option value='J'>J - Nontaxable sick pay</option>" +
+//"          <option value='K'>K - Excess golden parachute excise tax</option>" +
+//"          <option value='L'>L - Business expense reimbursements</option>" +
+//"          <option value='M'>M - SS or RRTA tax on group-term life</option>" +
+//"          <option value='N'>N - Medicare tax on group-term life</option>" +
+//"          <option value='P'>P - Moving expense reimbursements</option>" +
+"          <option value='Q'>Q - Nontaxable combat pay</option>" +
+//"          <option value='R'>R - Contrib. to Archer medical savings</option>" +
+//"          <option value='S'>S - Salary reduction contrib. to 408(p)</option>" +
+//"          <option value='T'>T - Adoption benefits</option>" +
+"          <option value='V'>V - Income from nonstat. stock options</option>" +
+"          <option value='W'>W - Contrib. to health savings account</option>" +
+"          <option value='Y'>Y - Deferrals to 409A nonqualified</option>" +
+//"          <option value='Z'>Z - Income under 409A nonqualified</option>" +
+"          <option value='AA'>AA - Roth contributions to 401(k)</option>" +
+"          <option value='BB'>BB - Roth contributions to 403(b)</option>" +
+//"          <option value='CC'>CC - For employer use only</option>" +
+"          <option value='DD'>DD - Employer-sponsored health coverage</option>" +
+//"          <option value='EE'>EE - Roth contributions to 457(b)</option>" +
+"          <option value='FF'>FF - Small employer health reimbursement</option>" +
 "        </select>" +
 "      </div>" +
 "    </div>" +
@@ -305,7 +333,7 @@ var w2FormTemplate = $.templates('w2Form',
 "        Amount" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='def-comp-b-amount'></input>" +
+"        <input name='def-comp-b-amount' placeholder='for 12b'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +
@@ -325,20 +353,34 @@ var w2FormTemplate = $.templates('w2Form',
 "      <div class='field-input'>" +
 "        <select name='def-comp-c-code'>" +
 "          <option value=''></option>" +
-"          <option value='D'>D - Deferred to 401(k)</option>" +
-"          <option value='E'>E - Deferred to 403(b)</option>" +
-"          <option value='F'>F - Deferred to 408(k)(6)</option>" +
-"          <option value='G'>G - Deferred to 457(b)</option>" +
-"          <option value='H'>H - Deferred to 501(c)(18)(D)</option>" +
-"          <option value='W'>W - Contrib. to Health Savings</option>" +
-"          <option value='Q'>Q - Nontaxable Combat Pay</option>" +
-"          <option value='C'>C - Group Term Life >$50,000</option>" +
-"          <option value='V'>V - Nonstatutory Stock Options</option>" +
-"          <option value='Y'>Y - Deferrals under 409A</option>" +
-"          <option value='AA'>AA - Roth contrib. to 401(k)</option>" +
-"          <option value='BB'>BB - Roth contrib. to 403(b)</option>" +
-"          <option value='DD'>DD - Sponsored Health Coverage</option>" +
-"          <option value='FF'>FF - Small Employer Health Reim.</option>" +
+//"          <option value='A'>A - Uncollected SS or RRTA tax on tips</option>" +
+//"          <option value='B'>B - Uncollected Medicare tax on tips</option>" +
+"          <option value='C'>C - Taxable group-term life >$50,000</option>" +
+"          <option value='D'>D - Elective deferrals to 401(k)</option>" +
+"          <option value='E'>E - Elective deferrals to 403(b)</option>" +
+"          <option value='F'>F - Elective deferrals to 408(k)(6)</option>" +
+"          <option value='G'>G - Elective deferrals to 457(b)</option>" +
+"          <option value='H'>H - Elective deferrals to 501(c)(18)(D)</option>" +
+//"          <option value='J'>J - Nontaxable sick pay</option>" +
+//"          <option value='K'>K - Excess golden parachute excise tax</option>" +
+//"          <option value='L'>L - Business expense reimbursements</option>" +
+//"          <option value='M'>M - SS or RRTA tax on group-term life</option>" +
+//"          <option value='N'>N - Medicare tax on group-term life</option>" +
+//"          <option value='P'>P - Moving expense reimbursements</option>" +
+"          <option value='Q'>Q - Nontaxable combat pay</option>" +
+//"          <option value='R'>R - Contrib. to Archer medical savings</option>" +
+//"          <option value='S'>S - Salary reduction contrib. to 408(p)</option>" +
+//"          <option value='T'>T - Adoption benefits</option>" +
+"          <option value='V'>V - Income from nonstat. stock options</option>" +
+"          <option value='W'>W - Contrib. to health savings account</option>" +
+"          <option value='Y'>Y - Deferrals to 409A nonqualified</option>" +
+//"          <option value='Z'>Z - Income under 409A nonqualified</option>" +
+"          <option value='AA'>AA - Roth contributions to 401(k)</option>" +
+"          <option value='BB'>BB - Roth contributions to 403(b)</option>" +
+//"          <option value='CC'>CC - For employer use only</option>" +
+"          <option value='DD'>DD - Employer-sponsored health coverage</option>" +
+//"          <option value='EE'>EE - Roth contributions to 457(b)</option>" +
+"          <option value='FF'>FF - Small employer health reimbursement</option>" +
 "        </select>" +
 "      </div>" +
 "    </div>" +
@@ -347,7 +389,7 @@ var w2FormTemplate = $.templates('w2Form',
 "        Amount" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='def-comp-c-amount'></input>" +
+"        <input name='def-comp-c-amount' placeholder='for 12c'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +
@@ -359,20 +401,34 @@ var w2FormTemplate = $.templates('w2Form',
 "      <div class='field-input'>" +
 "        <select name='def-comp-d-code'>" +
 "          <option value=''></option>" +
-"          <option value='D'>D - Deferred to 401(k)</option>" +
-"          <option value='E'>E - Deferred to 403(b)</option>" +
-"          <option value='F'>F - Deferred to 408(k)(6)</option>" +
-"          <option value='G'>G - Deferred to 457(b)</option>" +
-"          <option value='H'>H - Deferred to 501(c)(18)(D)</option>" +
-"          <option value='W'>W - Contrib. to Health Savings</option>" +
-"          <option value='Q'>Q - Nontaxable Combat Pay</option>" +
-"          <option value='C'>C - Group Term Life >$50,000</option>" +
-"          <option value='V'>V - Nonstatutory Stock Options</option>" +
-"          <option value='Y'>Y - Deferrals under 409A</option>" +
-"          <option value='AA'>AA - Roth contrib. to 401(k)</option>" +
-"          <option value='BB'>BB - Roth contrib. to 403(b)</option>" +
-"          <option value='DD'>DD - Sponsored Health Coverage</option>" +
-"          <option value='FF'>FF - Small Employer Health Reim.</option>" +
+//"          <option value='A'>A - Uncollected SS or RRTA tax on tips</option>" +
+//"          <option value='B'>B - Uncollected Medicare tax on tips</option>" +
+"          <option value='C'>C - Taxable group-term life >$50,000</option>" +
+"          <option value='D'>D - Elective deferrals to 401(k)</option>" +
+"          <option value='E'>E - Elective deferrals to 403(b)</option>" +
+"          <option value='F'>F - Elective deferrals to 408(k)(6)</option>" +
+"          <option value='G'>G - Elective deferrals to 457(b)</option>" +
+"          <option value='H'>H - Elective deferrals to 501(c)(18)(D)</option>" +
+//"          <option value='J'>J - Nontaxable sick pay</option>" +
+//"          <option value='K'>K - Excess golden parachute excise tax</option>" +
+//"          <option value='L'>L - Business expense reimbursements</option>" +
+//"          <option value='M'>M - SS or RRTA tax on group-term life</option>" +
+//"          <option value='N'>N - Medicare tax on group-term life</option>" +
+//"          <option value='P'>P - Moving expense reimbursements</option>" +
+"          <option value='Q'>Q - Nontaxable combat pay</option>" +
+//"          <option value='R'>R - Contrib. to Archer medical savings</option>" +
+//"          <option value='S'>S - Salary reduction contrib. to 408(p)</option>" +
+//"          <option value='T'>T - Adoption benefits</option>" +
+"          <option value='V'>V - Income from nonstat. stock options</option>" +
+"          <option value='W'>W - Contrib. to health savings account</option>" +
+"          <option value='Y'>Y - Deferrals to 409A nonqualified</option>" +
+//"          <option value='Z'>Z - Income under 409A nonqualified</option>" +
+"          <option value='AA'>AA - Roth contributions to 401(k)</option>" +
+"          <option value='BB'>BB - Roth contributions to 403(b)</option>" +
+//"          <option value='CC'>CC - For employer use only</option>" +
+"          <option value='DD'>DD - Employer-sponsored health coverage</option>" +
+//"          <option value='EE'>EE - Roth contributions to 457(b)</option>" +
+"          <option value='FF'>FF - Small employer health reimbursement</option>" +
 "        </select>" +
 "      </div>" +
 "    </div>" +
@@ -381,7 +437,7 @@ var w2FormTemplate = $.templates('w2Form',
 "        Amount" +
 "      </label>" +
 "      <div class='field-input'>" +
-"        <input name='def-comp-d-amount'></input>" +
+"        <input name='def-comp-d-amount' placeholder='for 12d'></input>" +
 "      </div>" +
 "    </div>" +
 "  </div>" +
