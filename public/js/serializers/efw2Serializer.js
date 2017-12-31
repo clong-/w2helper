@@ -34,7 +34,7 @@ var EFW2Serializer = function(data) {
     //for each business:
     //  for each employee:
     //    make an RW (data={w2})
-    //    make an RS (data={w2})
+    //    make an RS (data={w2, business})
     //  make an RE (data={business,report,rw-records})
     //  make an RT (data={rw-records})
     //make an RF (data={rw-records})
@@ -46,7 +46,10 @@ var EFW2Serializer = function(data) {
     var businesses = data.businesses.map(function(business) {
       var employees = business.employees.map(function(employee) {
         var rw = RecordSerializer('rw', { w2: employee.forms.w2 });
-        var rs = RecordSerializer('rs', { w2: employee.forms.w2 });
+        var rs = RecordSerializer('rs', {
+          business: business.forms.business,
+          w2: employee.forms.w2
+        });
         return { rw: rw, rs: rs };
       });
       var rwRecords = employees.map(function(employee) { return employee.rw; });

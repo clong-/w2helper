@@ -288,7 +288,7 @@ var rsRecordMap = {
     },
     {
       name: 'employer-account-number',
-      dataPath: 'constant',
+      dataPath: ['business','business-state-id'],
       defaultValue: '',
       format: {
         length: 20,
