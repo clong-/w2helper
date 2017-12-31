@@ -58,3 +58,5 @@ var StringFormatter = function() {
     formatString: formatString
   }
 }
+
+module.exports = StringFormatter;
