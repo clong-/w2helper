@@ -46,6 +46,7 @@ function Form(contextName, id, formType) {
     context.on('focus', 'input, textarea, select', function(event) {
       $(event.target).trigger('updateHelpInfo', formValues[event.target.name]);
     });
+    context.on('click', 'input[type=checkbox]', saveFormValue);
   }
 
   var updateView = function() {
@@ -69,7 +70,7 @@ function Form(contextName, id, formType) {
     var fieldValue = '';
     var propagateTo = event.target.dataset.propagateTo;
     if(event.target.type === 'checkbox') {
-      fieldValue = event.target.checked ? 'checked' : 'unchecked';
+      fieldValue = event.target.checked ? '1' : '0';
     } else {
       fieldValue = event.target.value;
     }
@@ -87,7 +88,7 @@ function Form(contextName, id, formType) {
         'input[name="'+fieldName+'"], textarea[name="'+fieldName+'"], select[name="'+fieldName+'"]'
       );
       if(target.attr('type') === 'checkbox') {
-        target.prop('checked', inheritedFormValues[fieldName].value === 'checked');
+        target.prop('checked', inheritedFormValues[fieldName].value === '1');
       } else {
         target.val(inheritedFormValues[fieldName].value);
       }
@@ -97,7 +98,7 @@ function Form(contextName, id, formType) {
         'input[name="'+fieldName+'"], textarea[name="'+fieldName+'"], select[name="'+fieldName+'"]'
       );
       if(target.attr('type') === 'checkbox') {
-        target.prop('checked', formValues[fieldName].value === 'checked');
+        target.prop('checked', formValues[fieldName].value === '1');
       } else {
         target.val(formValues[fieldName].value);
       }

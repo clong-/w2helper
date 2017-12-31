@@ -1,4 +1,4 @@
-var ValidationsFor = require('./fieldValidationMap');
+var ValidationsFor = require('./dataMaps/fieldValidationMap');
 
 function Validation() {
   var contentTests = {};
@@ -7,7 +7,7 @@ function Validation() {
     var validations = ValidationsFor[name];
     var errors = [];
     if(validations.content.indexOf('boolean') >= 0) {
-      value = (value === "checked") ? "T" : "";
+      value = (value === "1") ? "T" : "";
     }
     if(validations.required && value.length === 0) {
       errors.push('required');
