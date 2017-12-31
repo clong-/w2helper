@@ -401,7 +401,6 @@ textarea {
   color: red;
 }
 
-<<<<<<< HEAD
 input::placeholder {
   font-size: 8pt;
   color: #BBB;
@@ -409,7 +408,8 @@ input::placeholder {
 
 input:focus::placeholder {
   color: transparent;
-=======
+}
+
 .modal-background {
   width: 100%;
   height: 100%;
@@ -435,7 +435,6 @@ input:focus::placeholder {
   margin-top: 20px;
   margin-bottom: 20px;
   line-height: 20pt;
->>>>>>> Implement file generation/downlad modal
 }
 
 #printout {
