@@ -19,8 +19,6 @@ function Viewport(contextName, id, childType) {
     if(children.length) {
       children[currentChildIndex].render();
     }
-    context.on('click', '.next-child', function() { shiftView('next'); updateView(); });
-    context.on('click', '.prev-child', function() { shiftView('prev'); updateView(); });
   }
 
   var updateView = function() {
