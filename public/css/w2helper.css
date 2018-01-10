@@ -48,6 +48,15 @@ textarea {
   margin: 15px;
 }
 
+.employee-controls {
+  float: right;
+  margin-right: 0px;
+}
+
+.title {
+  float: left;
+}
+
 .box {
   display: inline-block;
   float: left;
@@ -55,10 +64,6 @@ textarea {
   border-radius: 10px;
   padding: 0px 10px 0px 10px;
   margin-bottom: 10px;
-}
-
-.viewport {
-  padding-top: 10px;
 }
 
 .w2-form div, .w2-form {
