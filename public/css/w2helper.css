@@ -48,7 +48,8 @@ textarea {
   margin: 15px;
 }
 
-.employee-controls {
+.employee-controls,
+.report-controls {
   float: right;
   margin: 10px;
   margin-right: 0px;
@@ -56,6 +57,7 @@ textarea {
 
 .title {
   float: left;
+  width: 50%;
 }
 
 .box {
@@ -118,6 +120,10 @@ textarea {
   font-size: 0;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.viewport {
+  margin-top: 15px;
 }
 
 .field {
