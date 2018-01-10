@@ -70,6 +70,10 @@ textarea {
   padding-bottom: 0px;
 }
 
+.box.employee {
+  min-width: 922px;
+}
+
 .w2-form div, .w2-form {
   box-sizing: border-box;
 }
