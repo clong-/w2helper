@@ -1,7 +1,7 @@
 var reportTemplate = $.templates('report',
 
 "<div id='{{:domID}}' class='box'>" +
-"  <h1>Report Name Here!</h1>" +
+"  <h2>Submitter Information</h2>" +
 "  <div class='report-forms'>" +
 "  </div>" +
 "  <div class='report-controls controls'>" +

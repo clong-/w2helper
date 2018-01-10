@@ -1,7 +1,7 @@
 var businessTemplate = $.templates('business',
 
 "<div id='{{:domID}}' class='business box'>" +
-"  <h1>Business Name Here!</h1>" +
+"  <h2>Business Information</h2>" +
 "  <div class='business-forms'>" +
 "  </div>" +
 "  <div class='business-controls controls'>" +

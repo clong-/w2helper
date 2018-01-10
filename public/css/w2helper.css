@@ -50,6 +50,7 @@ textarea {
 
 .employee-controls {
   float: right;
+  margin: 10px;
   margin-right: 0px;
 }
 
@@ -62,8 +63,11 @@ textarea {
   float: left;
   border: 2px solid black;
   border-radius: 10px;
-  padding: 0px 10px 0px 10px;
-  margin-bottom: 10px;
+  padding: 0px 10px 10px 10px;
+}
+
+.box.empty {
+  padding-bottom: 0px;
 }
 
 .w2-form div, .w2-form {

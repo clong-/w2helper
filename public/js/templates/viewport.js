@@ -3,8 +3,8 @@ var viewportTemplate = $.templates('viewport',
 "<div class='viewport-controls controls'>" +
 "</div>" +
 "{{if !children.length}}" +
-"  <div class='box'>" +
-"    <h2>No {{:childType}} added...</h2>" +
+"  <div class='empty box'>" +
+"    <h3>No {{:childType}} added...</h3>" +
 "  </div>" +
 "{{/if}}"
 
