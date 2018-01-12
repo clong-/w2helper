@@ -1,7 +1,6 @@
 TODO:
 - MVP:
-  - User Helps
-  - File export (Blob+FileSaver?)
+  - Good behavior
   - Good styling
 - Improvements:
   - Features:
@@ -23,3 +22,8 @@ TODO:
       - Install JS and CSS vendor libs with npm?
       - And then also bundle them
       - Gulp? Grunt?
+  - Publicity
+    - Readme for repo
+    - GitHub Pages site for repo
+      - SEO here, maybe!
+    - See how feasible firebase SEO is?
