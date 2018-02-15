@@ -126,6 +126,22 @@ textarea {
   margin-top: 15px;
 }
 
+.viewport-controls {
+  height: 0px;
+  margin: 0px;
+}
+
+.viewport-counter {
+  position: relative;
+  top: -10px;
+  left: calc(50% - 40px);
+  background-color: white;
+  width: 80px;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: center;
+}
+
 .field {
   border: 1px solid black;
   display: inline-block;

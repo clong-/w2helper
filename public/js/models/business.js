@@ -15,7 +15,10 @@ function Business(contextName, id) {
   var viewport = Viewport(
     [contextName, '#'+domID, ".employees-pane"].join(" "),
     [domID, 'viewport'].join("-"),
-    'employee'
+    {
+      childType: 'employee',
+      showCounter: true
+    }
   )
 
   var renderView = function() {
