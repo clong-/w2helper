@@ -15,7 +15,10 @@ function Business(contextName, id) {
   var viewport = Viewport(
     [contextName, '#'+domID, ".employees-pane"].join(" "),
     [domID, 'viewport'].join("-"),
-    'employee'
+    {
+      childType: 'employee',
+      showCounter: true
+    }
   )
 
   var renderView = function() {
@@ -31,6 +34,8 @@ function Business(contextName, id) {
     context.find('#'+domID).on('click', '#add-employee-to-'+domID, addEmployee);
     context.find('#'+domID).on('click', '.remove-employee', removeEmployee);
     context.find('#'+domID).on('propagate-field', '.business-forms', propagateField);
+    context.find('#'+domID).on('click', '.next-child', function() { changeEmployee('next') });
+    context.find('#'+domID).on('click', '.prev-child', function() { changeEmployee('prev') });
   }
 
   var updateView = function() {
@@ -46,6 +51,8 @@ function Business(contextName, id) {
     context.find('#'+domID).on('click', '#add-employee-to-'+domID, addEmployee);
     context.find('#'+domID).on('click', '.remove-employee', removeEmployee);
     context.find('#'+domID).on('propagate-field', '.business-forms', propagateField);
+    context.find('#'+domID).on('click', '.next-child', function() { changeEmployee('next') });
+    context.find('#'+domID).on('click', '.prev-child', function() { changeEmployee('prev') });
   }
 
   var destroyView = function() {
@@ -89,6 +96,11 @@ function Business(contextName, id) {
     }
     viewport.setChildren(employees);
     viewport.shiftView('prev');
+    updateView();
+  }
+
+  var changeEmployee = function(direction) {
+    viewport.shiftView(direction);
     updateView();
   }
 

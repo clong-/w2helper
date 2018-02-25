@@ -48,17 +48,32 @@ textarea {
   margin: 15px;
 }
 
+.employee-controls,
+.report-controls {
+  float: right;
+  margin: 10px;
+  margin-right: 0px;
+}
+
+.title {
+  float: left;
+  width: 50%;
+}
+
 .box {
   display: inline-block;
   float: left;
   border: 2px solid black;
   border-radius: 10px;
-  padding: 0px 10px 0px 10px;
-  margin-bottom: 10px;
+  padding: 0px 10px 10px 10px;
 }
 
-.viewport {
-  padding-top: 10px;
+.box.empty {
+  padding-bottom: 0px;
+}
+
+.box.employee {
+  min-width: 922px;
 }
 
 .w2-form div, .w2-form {
@@ -105,6 +120,26 @@ textarea {
   font-size: 0;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.viewport {
+  margin-top: 15px;
+}
+
+.viewport-controls {
+  height: 0px;
+  margin: 0px;
+}
+
+.viewport-counter {
+  position: relative;
+  top: -10px;
+  left: calc(50% - 40px);
+  background-color: white;
+  width: 80px;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .field {
@@ -429,12 +464,12 @@ input:focus::placeholder {
   padding: 0 15px 15px 15px;
   text-align: center;
   z-index: 200;
+  max-width: 50%;
 }
 
 .modal-content p {
   margin-top: 20px;
   margin-bottom: 20px;
-  line-height: 20pt;
 }
 
 #printout {

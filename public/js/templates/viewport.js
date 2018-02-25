@@ -1,12 +1,13 @@
 var viewportTemplate = $.templates('viewport',
 
 "<div class='viewport-controls controls'>" +
-"  <button class='btn btn-default prev-child' {{if !children.length}}disabled{{/if}}>&lt;&lt; Prev {{:childType}}</button>" +
-"  <button class='btn btn-default next-child' {{if !children.length}}disabled{{/if}}>Next {{:childType}} &gt;&gt;</button>" +
+"  {{if showCounter && children.length}}" +
+"    <div class='viewport-counter'>{{:index+1}} / {{:children.length}}</div>" +
+"  {{/if}}" +
 "</div>" +
 "{{if !children.length}}" +
-"  <div class='box'>" +
-"    <h2>No {{:childType}} added...</h2>" +
+"  <div class='{{:childType}} box empty'>" +
+"    <h3>No {{:childType}} added...</h3>" +
 "  </div>" +
 "{{/if}}"
 

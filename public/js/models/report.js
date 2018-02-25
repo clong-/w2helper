@@ -39,7 +39,6 @@ function Report(contextName, id) {
     //viewport.render();
     //context.on('click', '#add-business-to-'+domID, addBusiness);
     //context.on('click', '.remove-business', removeBusiness);
-    context.on('click', '#serialize-report', function() { window.report = serialize(); console.log(window.report) });
     context.on('click', '#show-file-modal', function(event) {
       context.trigger('doFileModal', serialize());
     });

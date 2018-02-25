@@ -1,6 +1,8 @@
-function Viewport(contextName, id, childType) {
+function Viewport(contextName, id, options) {
   //set rendering-related variables
   var contextName = contextName;
+  var childType = options['childType'] || 'record';
+  var showCounter = options['showCounter'] || false;
   var template = require('../templates/viewport');
   var domID = id;
 
@@ -14,13 +16,13 @@ function Viewport(contextName, id, childType) {
     context.append(template.render({
       domID: domID,
       children: children,
-      childType: childType
+      childType: childType,
+      showCounter: showCounter,
+      index: currentChildIndex
     }));
     if(children.length) {
       children[currentChildIndex].render();
     }
-    context.on('click', '.next-child', function() { shiftView('next'); updateView(); });
-    context.on('click', '.prev-child', function() { shiftView('prev'); updateView(); });
   }
 
   var updateView = function() {
@@ -28,7 +30,9 @@ function Viewport(contextName, id, childType) {
     context.html(template.render({
       domID: domID,
       children: children,
-      childType: childType
+      childType: childType,
+      showCounter: showCounter,
+      index: currentChildIndex
     }));
     if(children.length) {
       children[currentChildIndex].render();
