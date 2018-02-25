@@ -1,5 +1,6 @@
 var FileBuilder = require('../lib/fileBuilder');
 var FileSaver = require('../vendor/FileSaver');
+var W2DataValidator = require('../lib/w2DataValidator');
 
 var FileModal = function(contextName, id) {
   //ser rendering-related variables
@@ -12,13 +13,18 @@ var FileModal = function(contextName, id) {
   var state = 'start';
   var data = {};
   var file;
+  var validState = {
+    passed: true,
+    errors: []
+  };
 
   var renderView = function() {
     var context = $(contextName);
     context.append(template.render({
       domID: domID,
       visible: visible,
-      state: state
+      state: state,
+      errors: validState.errors
     }));
     context.on('doFileModal', doModal);
     context.on('click', 'button.file-button', advanceState);
@@ -32,7 +38,8 @@ var FileModal = function(contextName, id) {
     context.find('#'+domID).replaceWith(template.render({
       domID: domID,
       visible: visible,
-      state: state
+      state: state,
+      errors: validState.errors
     }));
   }
 
@@ -54,7 +61,7 @@ var FileModal = function(contextName, id) {
     updateView();
   }
 
-  var advanceState = function(event, success) {
+  var advanceState = function(event) {
     switch(state) {
       case 'start':
         state = 'working';
@@ -62,7 +69,7 @@ var FileModal = function(contextName, id) {
         generateFile();
         break;
       case 'working':
-        state = success ? 'ready' : 'failed';
+        state = validState.passed ? 'ready' : 'failed';
         updateView();
         break;
       case 'ready':
@@ -74,11 +81,11 @@ var FileModal = function(contextName, id) {
   }
 
   var generateFile = function() {
-    //do file generation here
+    validState = W2DataValidator(data).getState();
+    file = FileBuilder('efw2', data).build();
     setTimeout(function() {
-      $(contextName).trigger('generationDone', true);
+      $(contextName).trigger('generationDone');
     }, 3000);
-    file = FileBuilder('efw2',data).build();
   }
 
   var downloadFile = function() {
