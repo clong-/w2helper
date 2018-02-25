@@ -464,12 +464,12 @@ input:focus::placeholder {
   padding: 0 15px 15px 15px;
   text-align: center;
   z-index: 200;
+  max-width: 50%;
 }
 
 .modal-content p {
   margin-top: 20px;
   margin-bottom: 20px;
-  line-height: 20pt;
 }
 
 #printout {

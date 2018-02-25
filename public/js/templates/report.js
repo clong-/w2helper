@@ -5,7 +5,7 @@ var reportTemplate = $.templates('report',
 "    <h2>Submitter Information</h2>" +
 "  </div>" +
 "  <div class='report-controls controls'>" +
-"    <button id='show-file-modal' class='btn btn-default'>Show File Modal</button>" +
+"    <button id='show-file-modal' class='btn btn-default'>Download EFW2</button>" +
 //"    <button id='add-business-to-{{:domID}}' class='btn btn-default'>Add Business</button>" + //multiple businesses
 "  </div>" +
 "  <div class='report-forms'>" +
