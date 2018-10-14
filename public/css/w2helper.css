@@ -430,7 +430,8 @@ textarea {
   text-indent: 15px;
 }
 
-.help-validations .invalid {
+.help-validations .invalid,
+.modal-content .invalid {
   font-weight: bold;
   background-color: transparent;
   color: red;

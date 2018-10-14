@@ -2,17 +2,25 @@ var fileModalTemplate = $.templates('fileModal',
 
 "<div class='modal-background' id='{{:domID}}' {{if !visible}}hidden{{/if}}>" +
 "  <div class='modal-content'>" +
-"    <h3>You're almost there!</h3>" +
+"    {{if state == 'failed'}}" +
+"      <h3>Whoops!</h3>" +
+"    {{else}}" +
+"      <h3>You're almost there!</h3>" +
+"    {{/if}}" +
 "    <div class='body'>" +
 "      {{if state == 'failed'}}" +
 "        <p>" +
-"          Uh oh." +
+"          Looks like your report failed validation:" +
 "        </p>" +
 "        <p>" +
-"          Looks like your report failed validation for some reason..." +
+"          {{for errors}}" +
+"            <span class='invalid'>" +
+"              {{:type.charAt(0).toUpperCase().concat(type.substring(1))}} {{:index + 1}}: {{:error.charAt(0).toUpperCase().concat(error.substring(1))}} {{:object}}" +
+"            </span><br>" +
+"          {{/for}}" +
 "        </p>" +
 "        <p>" +
-"          Give your forms a once-over, fill any red fields you find, and try again!" +
+"          Give these items a once-over, fill any red fields you find, and try again!" +
 "        </p>" +
 "      {{else}}" +
 "        <p>" +

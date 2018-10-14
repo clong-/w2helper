@@ -1,17 +1,15 @@
 TODO:
 - MVP:
-  - Good behavior
-  - Good styling
+  - Save/load report (in localStorage)
 - Improvements:
   - Features:
-    - Save/load report (in localStorage)
+    - Save/load multiple reports (in localStorage)
     - Multiple businesses
     - More forms
     - State-specific options
     - Import from file
   - Frontend:
     - Readme
-    - Disclaimer
     - License?
   - Code Health:
     - Restructure project
